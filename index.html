@@ -3,234 +3,428 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>The Bloodline Watchers | Official Interactive Experience</title>
+  <title>The Bloodline Watchers | Official Interactive Reader Hub</title>
   
-  <meta name="description" content="The official interactive hub for 'The Bloodline Watchers: The Awakening.' A cosmic thriller by Orion R. Veil. Enter the glyphs and witness the awakening." />
-  <meta name="keywords" content="The Bloodline Watchers, Orion R. Veil, Cosmic Quill LLC, interactive fiction, mystery glyphs, cosmic horror book, supernatural thriller, The Awakening" />
-  <meta name="author" content="Orion R. Veil / Cosmic Quill LLC" />
+  <!-- Master SEO Metadata Suite -->
+  <meta name="description" content="The official central hub for readers of The Bloodline Watchers series by Orion R. Veil. Decode the glyphs, track the bloodlines, and access secure metadata." />
+  <meta name="keywords" content="The Bloodline Watchers, Orion R. Veil, Cosmic Quill, The Awakening, The Covenant backmatter, supernatural thriller, cosmic horror interactive, urban fantasy secret society, books 2026" />
+  <meta name="author" content="Orion R. Veil" />
   <meta name="theme-color" content="#050506">
   <link rel="canonical" href="https://www.thebloodlinewatchers.com/" />
   
+  <!-- Open Graph / Facebook Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.thebloodlinewatchers.com/">
+  <meta property="og:title" content="The Bloodline Watchers | Central Intelligence Node">
+  <meta property="og:description" content="Transmission detected from the Book 2 Backmatter. The symbols are burning. Reality is fracturing. Are you ready to awaken?">
+  <meta property="og:image" content="https://www.thebloodlinewatchers.com/Ebook.jpg">
+
+  <!-- Twitter Previews -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.thebloodlinewatchers.com/">
+  <meta property="twitter:title" content="The Bloodline Watchers | Reader Command Center">
+  <meta property="twitter:description" content="Transmission detected from the Book 2 Backmatter. Decode the ancient bloodlines now.">
+  <meta property="twitter:image" content="https://www.thebloodlinewatchers.com/Ebook.jpg">
+  
+  <!-- Advanced Schema: Maps the Series + Publisher directly for Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "The Bloodline Watchers Interactive Hub",
+    "@type": "BookSeries",
+    "name": "The Bloodline Watchers",
+    "description": "A dark supernatural thriller series blending cosmic horror, ancient prophecy, and deep-state occult conspiracy.",
+    "url": "https://www.thebloodlinewatchers.com",
     "author": {
       "@type": "Person",
-      "name": "Orion R. Veil"
+      "name": "Orion R. Veil",
+      "sameAs": [
+        "https://www.amazon.com/stores/Orion-R.-Veil/author/B0GFSW5X6V",
+        "https://www.goodreads.com/author/show/67637292.Orion_R_Veil"
+      ]
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Cosmic Quill LLC"
+      "name": "Cosmic Quill LLC",
+      "url": "https://www.cosmicquill.pub"
     },
-    "mainEntity": {
-      "@type": "Book",
-      "name": "The Bloodline Watchers: The Awakening",
-      "url": "https://books2read.com/thebloodlinewatchers/"
-    }
+    "hasPart": [
+      {
+        "@type": "Book",
+        "name": "The Bloodline Watchers: The Awakening",
+        "position": 1,
+        "url": "https://www.thebloodlinewatchers.com/#awakening"
+      },
+      {
+        "@type": "Book",
+        "name": "The Bloodline Watchers: The Covenant",
+        "position": 2,
+        "url": "https://www.thebloodlinewatchers.com/#covenant"
+      }
+    ]
   }
   </script>
   
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+Runic&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Runic&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #050506;
+      --void-black: #050506;
+      --deep-black: #0a0a0c;
+      --soft-gold: #d4af37;
+      --pale-gold: #f4e4bc;
       --ink: #e9e9ef;
-      --gold1: #ffd680;
-      --gold2: #ffb84a;
+      --ghost-gray: #888888;
+      --light-gray: #cccccc;
+      --alert-red: #ff4a4a;
     }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      text-align: center;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; 
-      overflow: hidden; 
-      position: relative;
+      font-family: 'Cormorant Garamond', serif;
+      background: var(--void-black);
+      color: var(--light-gray);
+      line-height: 1.8;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     #void-canvas {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -1;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 1;
+      pointer-events: none;
     }
 
-    .parallax-layer {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      will-change: transform;
+    .parallax-layer { position: relative; z-index: 2; width: 100%; will-change: transform; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+
+    /* Immersive Sticky Header Navigation */
+    .header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(5, 5, 6, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      z-index: 1000;
     }
 
-    .hero-wrapper {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+    .logo {
+      text-decoration: none; font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 700;
+      color: var(--soft-gold); letter-spacing: 3px; text-transform: uppercase;
+    }
+
+    .nav-links { display: flex; list-style: none; gap: 2.5rem; }
+    .nav-links a {
+      font-family: 'Cinzel', serif; color: var(--light-gray); text-decoration: none;
+      font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s;
+    }
+    .nav-links a:hover { color: var(--soft-gold); text-shadow: 0 0 8px rgba(212, 175, 55, 0.4); }
+
+    /* Book 2 Backmatter Alert Hub */
+    .backmatter-alert {
+      background: rgba(255, 74, 74, 0.08);
+      border: 1px solid var(--alert-red);
+      padding: 15px;
       width: 100%;
-      box-sizing: border-box;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: var(--alert-red);
+      text-transform: uppercase;
+      margin-top: 80px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 74, 74, 0.1);
+      animation: alertPulse 3s infinite alternate;
+    }
+
+    @keyframes alertPulse {
+      0% { border-color: rgba(255, 74, 74, 0.4); box-shadow: 0 0 5px rgba(255, 74, 74, 0.05); }
+      100% { border-color: rgba(255, 74, 74, 1); box-shadow: 0 0 20px rgba(255, 74, 74, 0.2); }
+    }
+
+    /* Main Terminal Hero Hook */
+    .hero-wrapper {
+      min-height: 90vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center; padding: 40px 20px 60px;
+    }
+
+    .hero-series-label {
+      font-family: 'Cinzel', serif; font-size: clamp(0.9rem, 2vw, 1.2rem);
+      color: var(--pale-gold); text-transform: uppercase; letter-spacing: 6px; margin-bottom: 10px;
     }
 
     .main-title {
-      font-family: 'Cinzel', serif;
-      font-weight: 700;
-      letter-spacing: .05em;
-      font-size: clamp(2rem, 8vw, 4.5rem);
-      margin: 0 0 10px 0;
-      line-height: 1.1;
-      text-transform: uppercase;
-      position: relative;
-      animation: cosmicPulse 4s ease-in-out infinite alternate;
+      font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: .08em;
+      font-size: clamp(2.2rem, 7.5vw, 4.8rem); margin: 0 0 5px 0; line-height: 1.1;
+      text-transform: uppercase; color: var(--soft-gold); animation: cosmicPulse 4s ease-in-out infinite alternate;
     }
 
     @keyframes cosmicPulse {
-      0% { text-shadow: 0 0 10px rgba(0,0,0,0.8); opacity: 0.9; transform: scale(1); }
-      100% { text-shadow: 0 0 25px var(--gold1), 0 0 40px rgba(255, 184, 74, 0.3); opacity: 1; transform: scale(1.02); }
+      0% { text-shadow: 0 0 15px rgba(0,0,0,0.9); transform: scale(1); }
+      100% { text-shadow: 0 0 30px var(--soft-gold), 0 0 50px rgba(212, 175, 55, 0.2); transform: scale(1.01); }
     }
 
-    .glitch-active {
-      animation: glitch-color 0.2s cubic-bezier(.25, .46, .45, .94) both infinite;
-    }
-
+    .glitch-active { animation: glitch-color 0.2s cubic-bezier(.25, .46, .45, .94) both infinite; }
     @keyframes glitch-color {
       0% { text-shadow: 2px 0 #ff0000, -2px 0 #00ccff; }
       50% { text-shadow: -2px 0 #ff0000, 2px 0 #00ccff; }
       100% { text-shadow: 2px 0 #ff0000, -2px 0 #00ccff; }
     }
 
-    .tagline {
-      font-size: clamp(0.9rem, 3vw, 1.2rem);
-      margin-bottom: 40px;
-      opacity: 0.8;
-      letter-spacing: 2px;
-      padding: 0 10px;
-    }
-
-    .dynamic-area {
-      min-height: 120px;
-      transition: opacity 0.5s ease;
-      opacity: 1;
-      margin-bottom: 20px;
-    }
+    .hero-author-byline { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.4rem); color: var(--ghost-gray); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 30px; }
+    .dynamic-area { min-height: 110px; transition: 0.5s ease; margin-bottom: 30px; }
+    .dynamic-area.fade-out { opacity: 0; transform: scale(0.97); }
+    .phrase-text { font-family: 'Cinzel', serif; font-size: clamp(1.1rem, 4vw, 1.6rem); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--pale-gold); }
+    .runes-container { font-family: 'Noto Sans Runic', sans-serif; font-size: clamp(2rem, 6vw, 2.8rem); color: var(--ink); height: 55px; }
     
-    .dynamic-area.fade-out { opacity: 0; transform: scale(0.95); }
-
-    .phrase-text {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1rem, 5vw, 1.4rem);
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold1);
-      text-shadow: 0 0 10px rgba(255, 184, 74, 0.4);
-    }
-
-    .runes-container {
-      font-family: 'Noto Sans Runic', sans-serif;
-      font-size: clamp(1.8rem, 6vw, 2.5rem);
-      color: var(--ink);
-      height: 50px; 
-    }
-
-    .rune {
-      margin: 0 4px;
-      display: inline-block;
-      transform-style: preserve-3d;
-      animation: runeFloat 6s ease-in-out infinite;
-    }
-    .rune.space { width: 10px; animation: none; }
-
+    .rune { margin: 0 5px; display: inline-block; transform-style: preserve-3d; animation: runeFloat 6s ease-in-out infinite; }
+    .rune.space { width: 12px; animation: none; }
     @keyframes runeFloat {
-      0%, 100% { transform: translateY(0) rotateY(0deg); color: #888; }
-      50% { transform: translateY(-4px) rotateY(180deg); color: var(--gold2); text-shadow: 0 0 15px var(--gold1); }
+      0%, 100% { transform: translateY(0) rotateY(0deg); color: #666; }
+      50% { transform: translateY(-6px) rotateY(180deg); color: var(--soft-gold); text-shadow: 0 0 20px var(--soft-gold); }
     }
 
-    .cta-container { margin-top: 25px; perspective: 1000px; }
-
-    .mystic-btn {
-      position: relative;
-      display: inline-block;
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1rem, 4vw, 1.2rem);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold1);
-      border: 1px solid var(--gold2);
-      padding: 18px 40px;
-      background: rgba(10,10,12,0.9);
-      text-decoration: none;
-      transition: 0.3s;
-      box-shadow: 0 0 20px rgba(255, 184, 74, 0.1);
-    }
-
-    .mystic-btn:hover {
-      background: rgba(255, 184, 74, 0.15);
-      box-shadow: 0 0 30px rgba(255, 184, 74, 0.4);
-      color: #fff;
-      transform: scale(1.02);
-    }
-
-    .release-subtext {
-      margin-top: 15px;
-      font-size: 0.75rem;
-      opacity: 0.6;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    footer {
-      background: linear-gradient(to top, #000 0%, transparent 100%);
-      color: #555;
-      padding: 20px;
-      font-size: 0.75rem;
-    }
+    .tagline { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.3rem); max-width: 750px; margin: 0 auto 40px; opacity: 0.85; letter-spacing: 2px; font-style: italic; }
     
-    a.contact-link { color: #777; text-decoration: none; }
-    a.contact-link:hover { color: var(--gold1); }
+    .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .mystic-btn { display: inline-block; font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px 36px; background: rgba(10,10,12,0.85); text-decoration: none; transition: 0.3s; cursor: pointer; }
+    
+    .btn-gold { color: var(--soft-gold); border: 1px solid var(--soft-gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.1); }
+    .btn-gold:hover { background: var(--soft-gold); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.45); transform: translateY(-2px); }
+    .btn-ghost { color: var(--ghost-gray); border: 1px solid var(--ghost-gray); }
+    .btn-ghost:hover { border-color: var(--pale-gold); color: var(--pale-gold); box-shadow: 0 0 20px rgba(244, 228, 188, 0.2); transform: translateY(-2px); }
+
+    /* Asymmetric Content Presentation Layouts */
+    .content-section { padding: 100px 0; border-top: 1px solid rgba(212, 175, 55, 0.1); }
+    .section-title { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 2.6rem); color: var(--soft-gold); margin-bottom: 4.5rem; letter-spacing: 0.15em; text-transform: uppercase; text-align: center; }
+    
+    .showcase-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: center; }
+    .media-vault { text-align: center; }
+    .manifested-artifact { max-width: 340px; width: 100%; height: auto; border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 15px 40px rgba(0,0,0,0.8); transition: 0.4s; }
+    .manifested-artifact:hover { transform: translateY(-8px); border-color: var(--soft-gold); box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25); }
+    
+    .shrouded-vault { max-width: 340px; width: 100%; aspect-ratio: 2 / 3; margin: 0 auto; background: rgba(8, 8, 10, 0.85); border: 1px dashed rgba(212, 175, 55, 0.25); display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--soft-gold); font-family: 'Cinzel', serif; box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
+
+    .intel-dossier h3 { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 2.4rem); color: #fff; margin-bottom: 0.5rem; }
+    .intel-dossier .subtitle { font-family: 'Cinzel', serif; font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--soft-gold); margin-bottom: 2rem; display: block; text-transform: uppercase; letter-spacing: 2px; }
+    .intel-dossier p { font-size: 1.15rem; margin-bottom: 1.5rem; opacity: 0.9; text-align: justify; }
+    
+    .meta-tags-list { list-style: none; margin: 25px 0 35px; font-size: 0.95rem; border-left: 2px solid rgba(212, 175, 55, 0.3); padding-left: 20px; }
+    .meta-tags-list li { margin-bottom: 10px; }
+    .meta-tags-list strong { color: var(--pale-gold); font-family: 'Cinzel', serif; font-size: 0.85rem; }
+    
+    .incoming-transmission-stamp { font-family: 'Cinzel', serif; font-size: 1.6rem; color: #fff; text-transform: uppercase; letter-spacing: 3px; margin-top: 2rem; text-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+
+    .architect-dossier { display: grid; grid-template-columns: 1fr 2.2fr; gap: 4rem; align-items: center; background: rgba(15, 15, 18, 0.65); border: 1px solid rgba(212, 175, 55, 0.15); padding: 4rem; }
+    .architect-portrait { width: 100%; height: auto; border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
+    .architect-bio h3 { font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--soft-gold); margin-bottom: 1.5rem; text-transform: uppercase; }
+    .architect-bio p { font-size: 1.15rem; margin-bottom: 1.5rem; opacity: 0.9; }
+
+    /* Storefront Acquisition Grid Blocks */
+    .store-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 20px; }
+    .store-card { background: rgba(10, 10, 12, 0.8); border: 1px solid rgba(212, 175, 55, 0.15); padding: 30px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
+    .store-card:hover { border-color: rgba(212, 175, 55, 0.4); }
+    .store-img-wrapper { max-width: 160px; margin-bottom: 20px; }
+    .store-img { width: 100%; height: auto; border: 1px solid rgba(212, 175, 55, 0.2); }
+    .store-card h4 { font-family: 'Cinzel', serif; font-size: 1.5rem; color: #fff; margin-bottom: 5px; }
+    .store-card .edition { font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--soft-gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 15px; }
+    .store-card p { font-size: 1.05rem; opacity: 0.85; margin-bottom: 25px; flex-grow: 1; }
+
+    /* Footer Integration Architecture */
+    .hub-footer { background: var(--deep-black); border-top: 1px solid rgba(212, 175, 55, 0.2); padding: 80px 0 40px; text-align: center; }
+    .hub-footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-bottom: 4rem; text-align: left; }
+    .hub-footer-block h4 { font-family: 'Cinzel', serif; color: var(--soft-gold); margin-bottom: 1.5rem; text-transform: uppercase; }
+    .hub-footer-block p, .hub-footer-block a { color: var(--ghost-gray); text-decoration: none; font-size: 1.05rem; display: block; margin-bottom: 0.8rem; }
+    .hub-footer-block a:hover { color: var(--soft-gold); }
+    .terminal-stamp { border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 40px; color: #444; font-size: 0.85rem; }
+
+    @media (max-width: 900px) {
+      .showcase-grid, .architect-dossier { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+      .architect-portrait { max-width: 280px; margin: 0 auto; }
+      .intel-dossier p { text-align: center; }
+      .meta-tags-list { border-left: none; padding-left: 0; }
+    }
+    @media (max-width: 768px) { .nav-links { display: none; } .hub-footer-grid { text-align: center; } }
   </style>
 </head>
-
 <body>
+
+  <!-- Deep Floating Star Backdrop Engine -->
   <canvas id="void-canvas"></canvas>
 
   <div class="parallax-layer" id="scene">
-    <div class="hero-wrapper">
+    
+    <!-- Immersive Sticky Nav -->
+    <header class="header">
+      <nav class="container">
+        <div class="nav">
+          <a href="#" class="logo">The Watchers Node</a>
+          <ul class="nav-links">
+            <li><a href="#awakening">Manifestation I</a></li>
+            <li><a href="#covenant">Manifestation II</a></li>
+            <li><a href="#architect">The Architect</a></li>
+            <li><a href="#acquisition">Acquisition Gate</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Custom Backmatter Entry Terminal Confirmation Banner -->
+    <div class="backmatter-alert">
+      ⚡ [Link Securely Verified via Book II Backmatter Coordinates] ⚡
+    </div>
+
+    <!-- Cinematic Hero Area -->
+    <header class="hero-wrapper">
+      <h2 class="hero-series-label">The Official Reader Experience Hub</h2>
       <h1 class="main-title" id="glitch-title">The Bloodline Watchers</h1>
-      <div class="tagline">The signal has returned.</div>
+      <h3 class="hero-author-byline">By Orion R. Veil</h3>
 
       <div class="dynamic-area" id="dynamic-container">
         <div class="phrase-text" id="phrase-eng">Enter the glyphs</div>
         <div class="runes-container" id="runes-target"></div>
       </div>
 
-      <div class="cta-container">
-        <a href="https://books2read.com/thebloodlinewatchers/" class="mystic-btn">Acquire the Artifact</a>
-        <div class="release-subtext">Secure the transmission at all retailers</div>
-      </div>
-    </div>
+      <p class="tagline">An ancient war is awakening beneath the modern world. You were never chosen to fight—you were bred for it.</p>
 
-    <footer>
-      <p class="mystic-footer">If you made it here and return… then you are awakening.</p>
-      <p>© 2025–2026 Cosmic Quill LLC. All rights reserved. Author: Orion R. Veil</p>
-      <p>Contact: <a href="mailto:orion@CosmicQuill.pub" class="contact-link">orion@CosmicQuill.pub</a></p>
+      <div class="btn-group">
+        <a href="#awakening" class="mystic-btn btn-gold">Decode Lore</a>
+        <a href="#acquisition" class="mystic-btn btn-ghost">Secure Access</a>
+      </div>
+    </header>
+
+    <!-- BOOK 1 LORE CORRIDOR -->
+    <main class="content-section" id="awakening">
+      <div class="container">
+        <div class="showcase-grid">
+          <div class="media-vault">
+            <a href="#acquisition">
+              <img src="Ebook.jpg" alt="The Bloodline Watchers: The Awakening Book Cover Art" class="manifested-artifact" loading="lazy">
+            </a>
+          </div>
+          <div class="intel-dossier">
+            <h3>The Bloodline Watchers</h3>
+            <span class="subtitle">Book One: The Awakening</span>
+            <p>Sam Howardson believed his life was entirely ordinary—until the marks appeared. Relentless symbols etched deep into his skin. Distant, visceral memories belonging to an identity not his own. A suffocating pressure tightening daily beneath the very fabric of modern reality.</p>
+            <p>From the isolated plains of Oklahoma to the shadow-drenched, haunted corridors of New Orleans, Sam and his family are violently torn from routine and dragged into a hidden global conflict older than recorded history. Bound by a lineage engineered specifically to stand between standard humanity and the unseen, they must stand against architects that have manipulated civilization from the dark for centuries.</p>
+            <ul class="meta-tags-list">
+              <li><strong>Classification //</strong> Dark Urban Fantasy / Occult Conspiracy / Mythic Thriller</li>
+              <li><strong>Core Themes //</strong> Inherited Fate, Cryptic Prophecies, Deep-State Spiritual Warfare</li>
+            </ul>
+            <div>
+              <a href="#acquisition" class="mystic-btn btn-gold">Acquire Artifact I</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- BOOK 2 FUTURE TEASER -->
+    <section class="content-section" id="covenant">
+      <div class="container">
+        <div class="showcase-grid" style="direction: rtl;">
+          <div class="media-vault" style="direction: ltr;">
+            <div class="shrouded-vault">
+              <span style="font-size: 1.4rem; letter-spacing: 3px; font-weight: 600;">COVER VEIL</span>
+              <span style="font-size: 0.85rem; color: var(--ghost-gray); margin-top: 5px;">TRANSMISSION PENDING</span>
+            </div>
+          </div>
+          <div class="intel-dossier" style="direction: ltr;">
+            <h3>The Bloodline Watchers</h3>
+            <span class="subtitle" style="color: #ff6b6b;">Book Two: The Covenant</span>
+            <p>The awakening was simply the catalyst. In this gripping, highly anticipated second entry of the series, the volatile fallout of Sam’s dark realization ripples across the criminal and political underworlds.</p>
+            <p>As the ancient shadow factions consolidate absolute power and the cosmic countdown to an apocalyptic cataclysm accelerates, survival demands new alliances—each forged and sealed in blood. The bloodline demands an extreme price. Will they pay it, or watch reality fracture completely beyond repair?</p>
+            <p class="incoming-transmission-stamp">Manifesting This Summer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTHOR DOSSIER -->
+    <section class="content-section" id="architect">
+      <div class="container">
+        <h2 class="section-title">The Scribe</h2>
+        <div class="architect-dossier">
+          <img src="OrionRVeil.jpg" alt="Orion R. Veil Portrait" class="architect-portrait" loading="lazy">
+          <div class="architect-bio">
+            <h3>Orion R. Veil</h3>
+            <p>Orion R. Veil writes at the volatile intersection of alternative archaeology, forgotten human histories, and cosmic thrillers. Drawing creative atmospheric cues from comparative religion, hidden traditions, and the anomalous dark corners of modern reality, Veil’s works function as an open invitation to question where standard myth ends and pure ancestral memory begins.</p>
+            <p>Born within Muskogee, Oklahoma, and currently operating out of Texas, Orion frames stories around normal individuals caught inside grand, pre-engineered fates. Rather than serving comforting, convenient answers, his novels explore what occurs when ordinary people are forced to embrace what they were fundamentally bred to become.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTEGRATED STOREFRONT ACQUISITION VAULT -->
+    <section class="content-section" id="acquisition">
+      <div class="container">
+        <h2 class="section-title">Artifact Acquisition Vault</h2>
+        <p style="text-align: center; font-size: 1.2rem; max-width: 650px; margin: -2.5rem auto 3.5rem; color: var(--ghost-gray);">
+          Secure primary data blocks across authorized retail gateways or track the overarching network expansion.
+        </p>
+        
+        <div class="store-grid">
+          <!-- BOOK 1 PURCHASE CARD -->
+          <div class="store-card">
+            <div class="store-img-wrapper">
+              <img src="Ebook.jpg" alt="The Awakening" class="store-img">
+            </div>
+            <h4>The Awakening</h4>
+            <span class="edition">Book One // Available Worldwide</span>
+            <p>Secure the record detailing the unlocking of the symbols. Follow Sam Howardson's violent transition into alternative cosmic warfare.</p>
+            <div class="btn-group" style="width: 100%;">
+              <a href="https://a.co/d/erI1eEq" target="_blank" rel="noopener" class="mystic-btn btn-gold" style="width: 100%; text-align: center; padding: 12px 10px; font-size: 0.8rem;">Amazon Portal</a>
+              <a href="https://books2read.com/thebloodlinewatchers/" target="_blank" rel="noopener" class="mystic-btn btn-gold" style="width: 100%; text-align: center; padding: 12px 10px; font-size: 0.8rem;">Universal Gate</a>
+            </div>
+          </div>
+
+          <!-- BOOK 2 PRE-RELEASE CARD -->
+          <div class="store-card" style="opacity: 0.75;">
+            <div class="store-img-wrapper">
+              <img src="orionrvale-logo.jpg" alt="The Covenant Placeholder" class="store-img">
+            </div>
+            <h4>The Covenant</h4>
+            <span class="edition" style="color: #ff6b6b;">Book Two // Incoming Transmission</span>
+            <p>The highly anticipated sequel. Pre-purchase systems and tracking configurations are pending deployment execution arrays.</p>
+            <a href="#covenant" class="mystic-btn btn-ghost" style="width: 100%; text-align: center; padding: 12px 10px; font-size: 0.8rem;">Monitor Teaser</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unified Cross-Link Infrastructure Footer -->
+    <footer class="hub-footer">
+      <div class="container">
+        <div class="hub-footer-grid">
+          <div class="hub-footer-block">
+            <h4>Imprint Core</h4>
+            <a href="mailto:orion@cosmicquill.pub">orion@cosmicquill.pub</a>
+          </div>
+          <div class="hub-footer-block">
+            <h4>Manifestations</h4>
+            <a href="#awakening">I: The Awakening</a>
+            <a href="#covenant">II: The Covenant</a>
+          </div>
+          <div class="hub-footer-block">
+            <h4>Corporate Node</h4>
+            <!-- Essential crawler routing connection to secure the network loop -->
+            <p>Official Series Imprint of <a href="https://www.cosmicquill.pub" target="_blank" rel="noopener" style="display:inline; text-decoration: underline; color: var(--soft-gold);">Cosmic Quill™ LLC</a></p>
+            <p>Archival Verification Node: Active</p>
+          </div>
+        </div>
+        <div class="terminal-stamp">
+          <p style="font-family: 'Cinzel', serif; color: var(--soft-gold); margin-bottom: 15px; font-size: 0.95rem; letter-spacing: 2px;">IF YOU MADE IT HERE AND RETURN… THEN YOU ARE AWAKENING.</p>
+          <p>&copy; Orion R. Veil & Cosmic Quill LLC. All rights strictly reserved. All incoming traffic logged seamlessly.</p>
+        </div>
+      </div>
     </footer>
   </div>
 
+  <!-- Central Rendering Logic Engines -->
   <script>
-    // 1. CONFIG - Updated with "Remember Who You Are"
     const phrases = [
       { eng: "Enter the glyphs", runes: "ᛖᚾᛏᛖᚱ ᛏᚺᛖ ᚷᛚᚢᛈᛋ" },
       { eng: "The signal burns", runes: "ᚦᛖ ᛋᛁᚷᚾᚨᛚ ᛒᚢᚱᚾᛋ" },
@@ -240,8 +434,7 @@
 
     const canvas = document.getElementById('void-canvas');
     const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
+    let width, height, particles = [];
 
     function resize() {
       width = canvas.width = window.innerWidth;
@@ -253,28 +446,23 @@
     class Particle {
       constructor() { this.reset(); }
       reset() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.size = Math.random() * 2;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.opacity = Math.random() * 0.5;
-        this.life = Math.random() * 100;
-        this.color = Math.random() > 0.9 ? '255, 214, 128' : '100, 100, 110';
+        this.x = Math.random() * width; this.y = Math.random() * height;
+        this.size = Math.random() * 1.8;
+        this.speedX = (Math.random() - 0.5) * 0.25; this.speedY = (Math.random() - 0.5) * 0.25;
+        this.opacity = Math.random() * 0.6; this.life = Math.random() * 120;
+        this.color = Math.random() > 0.85 ? '212, 175, 55' : '130, 130, 140';
       }
       update() {
         this.x += this.speedX; this.y += this.speedY; this.life--;
         if (this.life < 0 || this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
       }
       draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
-        ctx.fill();
+        ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`; ctx.fill();
       }
     }
 
-    for (let i = 0; i < 70; i++) particles.push(new Particle());
+    for (let i = 0; i < 75; i++) particles.push(new Particle());
     function animate() {
       ctx.clearRect(0, 0, width, height);
       particles.forEach(p => { p.update(); p.draw(); });
@@ -283,9 +471,9 @@
     animate();
 
     document.addEventListener('mousemove', (e) => {
-      if(window.innerWidth > 768) {
-        const x = (window.innerWidth - e.pageX * 2) / 90;
-        const y = (window.innerHeight - e.pageY * 2) / 90;
+      if(window.innerWidth > 900) {
+        const x = (window.innerWidth - e.pageX * 2) / 100;
+        const y = (window.innerHeight - e.pageY * 2) / 100;
         document.getElementById('scene').style.transform = `translate(${x}px, ${y}px)`;
       }
     });
@@ -301,17 +489,20 @@
       str.split("").forEach((c, i) => {
         const s = document.createElement('span');
         if (c === " ") { s.className = 'rune space'; s.innerHTML = "&nbsp;"; }
-        else { s.className = 'rune'; s.textContent = c; s.style.animationDelay = `${i*0.1}s`; }
+        else { s.className = 'rune'; s.textContent = c; s.style.animationDelay = `${i*0.08}s`; }
         runeEl.appendChild(s);
       });
     }
 
     function triggerGlitch() {
-      titleEl.classList.add('glitch-active');
-      setTimeout(() => titleEl.classList.remove('glitch-active'), 300);
+      if(titleEl) {
+        titleEl.classList.add('glitch-active');
+        setTimeout(() => titleEl.classList.remove('glitch-active'), 250);
+      }
     }
 
     function cycle() {
+      if (!container) return;
       container.classList.add('fade-out');
       setTimeout(() => {
         idx = (idx + 1) % phrases.length;
@@ -324,6 +515,16 @@
 
     renderRunes(phrases[0].runes);
     setInterval(cycle, 5000);
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset, behavior: 'smooth' });
+        }
+      });
+    });
   </script>
 </body>
 </html>
