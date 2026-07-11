@@ -283,7 +283,8 @@
       <h3 class="hero-author-byline">By Orion R. Veil</h3>
 
       <div class="dynamic-area" id="dynamic-container">
-        <div class="phrase-text" id="phrase-eng">Enter the glyphs</div>
+        <!-- FIXED: Started the HTML default state cleanly at "Remember Who You Are" -->
+        <div class="phrase-text" id="phrase-eng">Remember Who You Are</div>
         <div class="runes-container" id="runes-target"></div>
       </div>
 
@@ -326,10 +327,7 @@
       <div class="container">
         <div class="showcase-grid" style="direction: rtl;">
           <div class="media-vault" style="direction: ltr;">
-            <a href="#acquisition">
-              <!-- Swapped perfectly to the unified Ebook2 path name -->
-              <img src="Ebook2.jpg" alt="The Bloodline Watchers: The Covenant Book Cover Art" class="manifested-artifact" loading="lazy">
-            </a>
+            <img src="Ebook2.jpg" alt="The Bloodline Watchers: The Covenant Book Cover Art" class="manifested-artifact" loading="lazy">
           </div>
           <div class="intel-dossier" style="direction: ltr;">
             <h3>The Bloodline Watchers</h3>
@@ -338,10 +336,10 @@
             <p>As the ancient shadow factions consolidate absolute power and the cosmic countdown to an apocalyptic cataclysm accelerates, survival demands new alliances—each forged and sealed in blood. The bloodline demands an extreme price. Will they pay it, or watch reality fracture completely beyond repair?</p>
             <ul class="meta-tags-list">
               <li><strong>Classification //</strong> Deep Underworld Realism / Dynamic Faction Conflicts</li>
-              <li><strong>Status Updates //</strong> System Compiling Active // Launch Protocols Live</li>
+              <li><strong>Status Updates //</strong> System Compiling Active // Transmission Shrouded</li>
             </ul>
             <div>
-              <a href="#acquisition" class="mystic-btn btn-gold">Acquire Artifact II</a>
+              <span class="mystic-btn btn-ghost" style="cursor: default; opacity: 0.65;">Coming Soon</span>
             </div>
           </div>
         </div>
@@ -387,15 +385,15 @@
           </div>
 
           <!-- BOOK 2 GATEWAY -->
-          <div class="store-card">
+          <div class="store-card" style="opacity: 0.85;">
             <div class="store-img-wrapper">
               <img src="Ebook2.jpg" alt="The Covenant Cover Art" class="store-img">
             </div>
             <h4>The Covenant</h4>
-            <span class="edition" style="color: #ffd680;">Book Two // Active</span>
+            <span class="edition" style="color: #ff6b6b;">Book Two // Incoming</span>
             <p>The explosive second phase tracking the criminal and systemic fallout of the bloodline wars.</p>
             <div class="btn-group" style="width: 100%; margin-top: auto;">
-              <a href="https://books2read.com/thebloodlinewatchers/" target="_blank" rel="noopener" class="mystic-btn btn-gold" style="width: 100%; text-align: center; padding: 12px 10px; font-size: 0.75rem;">Secure Copy</a>
+              <a href="#covenant" class="mystic-btn btn-ghost" style="width: 100%; text-align: center; padding: 12px 10px; font-size: 0.75rem;">Coming Soon</a>
             </div>
           </div>
         </div>
@@ -431,11 +429,12 @@
 
   <!-- Background Particle Logic Loop Engines -->
   <script>
+    // FIXED: Positioned "Remember Who You Are" as position zero in the compilation index array
     const phrases = [
-      { eng: "Enter the glyphs", runes: "ᛖᚾᛏᛖᚱ ᛏᚺᛖ ᚷᛚᚢᛈᛋ" },
+      { eng: "Remember Who You Are", runes: "ᚱᛖᛗᛖᛗᛒᛖᚱ ᚹᚺᛟ ᛁᛟᚢ ᚨᚱᛖ" },
       { eng: "The signal burns", runes: "ᚦᛖ ᛋᛁᚷᚾᚨᛚ ᛒᚢᚱᚾᛋ" },
       { eng: "Blood remembers", runes: "ᛒᛚᛟᛟᛞ ᚱᛖᛗᛖᛗᛒᛖᚱᛋ" },
-      { eng: "Remember Who You Are", runes: "ᚱᛖᛗᛖᛗᛒᛖᚱ ᚹᚺᛟ ᛁᛟᚢ ᚨᚱᛖ" }
+      { eng: "Enter the glyphs", runes: "ᛖᚾᛏᛖᚱ ᛏᚺᛖ ᚷᛚᚢᛈᛋ" }
     ];
 
     const canvas = document.getElementById('void-canvas');
