@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>The Bloodline Watchers | Official Interactive Reader Hub</title>
   
   <!-- Master SEO Metadata Suite -->
@@ -26,6 +26,11 @@
   <meta property="twitter:description" content="Transmission detected from the backmatter coordinates. Step into the series database.">
   <meta property="twitter:image" content="https://www.thebloodlinewatchers.com/RV-01-The%20Bloodline%20Watchers-02.jpg">
   
+  <!-- Critical Network Preconnects for Google Fonts (Fixes Render Blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Runic&display=swap" rel="stylesheet" />
+
   <!-- Advanced Schema -->
   <script type="application/ld+json">
   {
@@ -63,8 +68,6 @@
     ]
   }
   </script>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Runic&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -103,9 +106,9 @@
     .header {
       position: fixed;
       top: 0; left: 0; width: 100%;
-      background: rgba(5, 5, 6, 0.9);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(5, 5, 6, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(212, 175, 55, 0.15);
       z-index: 1000;
     }
@@ -119,7 +122,7 @@
     .nav-links { display: flex; list-style: none; gap: 2rem; }
     .nav-links a {
       font-family: 'Cinzel', serif; color: var(--light-gray); text-decoration: none;
-      font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s;
+      font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s;
     }
     .nav-links a:hover { color: var(--soft-gold); text-shadow: 0 0 8px rgba(212, 175, 55, 0.4); }
 
@@ -147,7 +150,7 @@
 
     /* Cinematic Terminal Hero Hook */
     .hero-wrapper {
-      min-height: 90vh; display: flex; flex-direction: column;
+      min-height: 85vh; display: flex; flex-direction: column;
       justify-content: center; align-items: center; text-align: center; padding: 40px 20px 60px;
     }
 
@@ -163,8 +166,8 @@
     }
 
     @keyframes cosmicPulse {
-      0% { text-shadow: 0 0 15px rgba(0,0,0,0.9); transform: scale(1); }
-      100% { text-shadow: 0 0 30px var(--soft-gold), 0 0 50px rgba(212, 175, 55, 0.2); transform: scale(1.01); }
+      0% { text-shadow: 0 0 15px rgba(0,0,0,0.9); }
+      100% { text-shadow: 0 0 30px var(--soft-gold), 0 0 50px rgba(212, 175, 55, 0.2); }
     }
 
     .glitch-active { animation: glitch-color 0.2s cubic-bezier(.25, .46, .45, .94) both infinite; }
@@ -175,36 +178,50 @@
     }
 
     .hero-author-byline { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.4rem); color: var(--ghost-gray); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 30px; }
-    .dynamic-area { min-height: 110px; transition: 0.5s ease; margin-bottom: 30px; }
-    .dynamic-area.fade-out { opacity: 0; transform: scale(0.97); }
+    .dynamic-area { min-height: 110px; transition: opacity 0.5s ease; margin-bottom: 30px; }
+    .dynamic-area.fade-out { opacity: 0; }
     .phrase-text { font-family: 'Cinzel', serif; font-size: clamp(1.1rem, 4vw, 1.6rem); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--pale-gold); }
     .runes-container { font-family: 'Noto Sans Runic', sans-serif; font-size: clamp(2rem, 6vw, 2.8rem); color: var(--ink); height: 55px; }
     
-    .rune { margin: 0 5px; display: inline-block; transform-style: preserve-3d; animation: runeFloat 6s ease-in-out infinite; }
+    .rune { margin: 0 5px; display: inline-block; animation: runeFloat 6s ease-in-out infinite; }
     .rune.space { width: 12px; animation: none; }
     @keyframes runeFloat {
-      0%, 100% { transform: translateY(0) rotateY(0deg); color: #666; }
-      50% { transform: translateY(-6px) rotateY(180deg); color: var(--soft-gold); text-shadow: 0 0 20px var(--soft-gold); }
+      0%, 100% { transform: translateY(0); color: #666; }
+      50% { transform: translateY(-6px); color: var(--soft-gold); text-shadow: 0 0 20px var(--soft-gold); }
     }
 
     .tagline { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.3rem); max-width: 750px; margin: 0 auto 40px; opacity: 0.85; letter-spacing: 2px; font-style: italic; }
     
-    .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-    .mystic-btn { display: inline-block; font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px 36px; background: rgba(10,10,12,0.85); text-decoration: none; transition: 0.3s; cursor: pointer; }
+    .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .mystic-btn { display: inline-block; font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px 36px; background: rgba(10,10,12,0.85); text-decoration: none; transition: background 0.3s, transform 0.3s, box-shadow 0.3s; cursor: pointer; }
     
     .btn-gold { color: var(--soft-gold); border: 1px solid var(--soft-gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.1); }
     .btn-gold:hover { background: var(--soft-gold); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.45); transform: translateY(-2px); }
     .btn-ghost { color: var(--ghost-gray); border: 1px solid var(--ghost-gray); }
     .btn-ghost:hover { border-color: var(--pale-gold); color: var(--pale-gold); box-shadow: 0 0 20px rgba(244, 228, 188, 0.2); transform: translateY(-2px); }
 
-    /* Lore Grid Display Formats */
-    .content-section { padding: 100px 0; border-top: 1px solid rgba(212, 175, 55, 0.1); }
+    /* Performance optimization: content-visibility defers offscreen rendering for high FPS mobile scrolling */
+    .content-section { 
+      padding: 100px 0; 
+      border-top: 1px solid rgba(212, 175, 55, 0.1); 
+      content-visibility: auto;
+      contain-intrinsic-size: 800px;
+    }
     .section-title { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 2.6rem); color: var(--soft-gold); margin-bottom: 4.5rem; letter-spacing: 0.15em; text-transform: uppercase; text-align: center; }
     
     .showcase-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: center; }
     .media-vault { text-align: center; }
     
-    .manifested-artifact { max-width: 340px; width: 100%; height: auto; border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 15px 40px rgba(0,0,0,0.8); transition: 0.4s; }
+    /* Layout Lock: Aspect ratio prevents Cumulative Layout Shift (CLS) */
+    .manifested-artifact { 
+      max-width: 340px; 
+      width: 100%; 
+      height: auto; 
+      aspect-ratio: 1 / 1.5; 
+      border: 1px solid rgba(212, 175, 55, 0.3); 
+      box-shadow: 0 15px 40px rgba(0,0,0,0.8); 
+      transition: transform 0.4s, border-color 0.4s; 
+    }
     .manifested-artifact:hover { transform: translateY(-8px); border-color: var(--soft-gold); box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25); }
 
     .intel-dossier h3 { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 2.4rem); color: #fff; margin-bottom: 0.5rem; }
@@ -214,11 +231,9 @@
     .meta-tags-list { list-style: none; margin: 25px 0 35px; font-size: 0.95rem; border-left: 2px solid rgba(212, 175, 55, 0.3); padding-left: 20px; }
     .meta-tags-list li { margin-bottom: 10px; }
     .meta-tags-list strong { color: var(--pale-gold); font-family: 'Cinzel', serif; font-size: 0.85rem; }
-    
-    .incoming-transmission-stamp { font-family: 'Cinzel', serif; font-size: 1.6rem; color: #fff; text-transform: uppercase; letter-spacing: 3px; margin-top: 2rem; text-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
 
     .architect-dossier { display: grid; grid-template-columns: 1fr 2.2fr; gap: 4rem; align-items: center; background: rgba(15, 15, 18, 0.65); border: 1px solid rgba(212, 175, 55, 0.15); padding: 4rem; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-    .architect-portrait { width: 100%; height: auto; border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
+    .architect-portrait { width: 100%; height: auto; aspect-ratio: 1 / 1; border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
     .architect-bio h3 { font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--soft-gold); margin-bottom: 1.5rem; text-transform: uppercase; }
     .architect-bio p { font-size: 1.15rem; margin-bottom: 1.5rem; opacity: 0.9; }
 
@@ -227,13 +242,13 @@
     .store-card { background: rgba(10, 10, 12, 0.8); border: 1px solid rgba(212, 175, 55, 0.15); padding: 35px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.5); transition: border-color 0.3s; }
     .store-card:hover { border-color: rgba(212, 175, 55, 0.4); }
     .store-img-wrapper { max-width: 160px; margin-bottom: 20px; height: 240px; display: flex; align-items: center; justify-content: center; width: 100%; }
-    .store-img { width: 100%; height: auto; border: 1px solid rgba(212, 175, 55, 0.2); }
+    .store-img { width: 100%; height: auto; aspect-ratio: 1 / 1.5; border: 1px solid rgba(212, 175, 55, 0.2); }
     .store-card h4 { font-family: 'Cinzel', serif; font-size: 1.5rem; color: #fff; margin-bottom: 5px; }
     .store-card .edition { font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--soft-gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 15px; display: block; }
     .store-card p { font-size: 1.05rem; opacity: 0.85; margin-bottom: 25px; flex-grow: 1; line-height: 1.5; }
 
     /* Footer Integration Architecture */
-    .hub-footer { background: var(--deep-black); border-top: 1px solid rgba(212, 175, 55, 0.2); padding: 80px 0 40px; text-align: center; }
+    .hub-footer { background: var(--deep-black); border-top: 1px solid rgba(212, 175, 55, 0.2); padding: 80px 0 40px; text-align: center; content-visibility: auto; }
     .hub-footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-bottom: 4rem; text-align: left; }
     .hub-footer-block h4 { font-family: 'Cinzel', serif; color: var(--soft-gold); margin-bottom: 1.5rem; text-transform: uppercase; }
     .hub-footer-block p, .hub-footer-block a { color: var(--ghost-gray); text-decoration: none; font-size: 1.05rem; display: block; margin-bottom: 0.8rem; }
@@ -295,13 +310,14 @@
       </div>
     </header>
 
-    <!-- MANIFESTATION 2: THE COVENANT -->
+    <!-- MANIFESTATION 2: THE COVENANT (Primary LCP Focus Element) -->
     <main class="content-section" id="covenant">
       <div class="container">
         <div class="showcase-grid">
           <div class="media-vault">
             <a href="https://books2read.com/TheBloodlineWatchers-TheCovenant" target="_blank" rel="noopener">
-              <img src="RV-01-The%20Bloodline%20Watchers-02.jpg" alt="The Bloodline Watchers: The Covenant Book Cover Art" class="manifested-artifact" loading="lazy">
+              <!-- Optimized Image: Explicit dimensions, fetchpriority="high" for fast LCP -->
+              <img src="RV-01-The%20Bloodline%20Watchers-02.jpg" alt="The Bloodline Watchers: The Covenant Book Cover Art" class="manifested-artifact" width="340" height="510" fetchpriority="high" decoding="async">
             </a>
           </div>
           <div class="intel-dossier">
@@ -313,8 +329,9 @@
               <li><strong>Classification //</strong> Deep Underworld Realism / Dynamic Faction Conflicts</li>
               <li><strong>Status Updates //</strong> System Compiling Active // Transmission Shrouded</li>
             </ul>
-            <div>
-              <a href="https://books2read.com/TheBloodlineWatchers-TheCovenant" target="_blank" rel="noopener" class="mystic-btn btn-gold">Coming August 13, 2026</a>
+            <div class="btn-group" style="justify-content: flex-start;">
+              <a href="https://a.co/d/000C4vQN" target="_blank" rel="noopener" class="mystic-btn btn-gold">Amazon</a>
+              <a href="https://books2read.com/TheBloodlineWatchers-TheCovenant" target="_blank" rel="noopener" class="mystic-btn btn-gold">All Retailers</a>
             </div>
           </div>
         </div>
@@ -326,8 +343,9 @@
       <div class="container">
         <div class="showcase-grid" style="direction: rtl;">
           <div class="media-vault" style="direction: ltr;">
-            <a href="#acquisition">
-              <img src="Ebook.jpg" alt="The Bloodline Watchers: The Awakening Book Cover Art" class="manifested-artifact" loading="lazy">
+            <a href="https://books2read.com/thebloodlinewatchers/" target="_blank" rel="noopener">
+              <!-- Lazy loaded offscreen image with size lock -->
+              <img src="Ebook.jpg" alt="The Bloodline Watchers: The Awakening Book Cover Art" class="manifested-artifact" width="340" height="510" loading="lazy" decoding="async">
             </a>
           </div>
           <div class="intel-dossier" style="direction: ltr;">
@@ -339,8 +357,9 @@
               <li><strong>Classification //</strong> Dark Urban Fantasy / Occult Conspiracy / Mythic Thriller</li>
               <li><strong>Core Themes //</strong> Inherited Fate, Cryptic Prophecies, Deep-State Spiritual Warfare</li>
             </ul>
-            <div>
-              <a href="#acquisition" class="mystic-btn btn-gold">Available Now</a>
+            <div class="btn-group" style="justify-content: flex-start;">
+              <a href="https://a.co/d/erI1eEq" target="_blank" rel="noopener" class="mystic-btn btn-gold">Amazon</a>
+              <a href="https://books2read.com/thebloodlinewatchers/" target="_blank" rel="noopener" class="mystic-btn btn-gold">All Retailers</a>
             </div>
           </div>
         </div>
@@ -352,7 +371,7 @@
       <div class="container">
         <h2 class="section-title">The Scribe</h2>
         <div class="architect-dossier">
-          <img src="OrionRVeil.jpg" alt="Orion R. Veil Portrait" class="architect-portrait" loading="lazy">
+          <img src="OrionRVeil.jpg" alt="Orion R. Veil Portrait" class="architect-portrait" width="300" height="300" loading="lazy" decoding="async">
           <div class="architect-bio">
             <h3>Orion R. Veil</h3>
             <p>Orion R. Veil writes at the volatile intersection of alternative archaeology, forgotten human histories, and cosmic thrillers. Drawing creative atmospheric cues from comparative religion, hidden traditions, and the anomalous dark corners of modern reality, Veil’s works function as an open invitation to question where standard myth ends and pure ancestral memory begins.</p>
@@ -374,20 +393,21 @@
           <!-- BOOK 2 GATEWAY -->
           <div class="store-card" style="opacity: 0.95;">
             <div class="store-img-wrapper">
-              <img src="RV-01-The%20Bloodline%20Watchers-02.jpg" alt="The Covenant Cover Art" class="store-img">
+              <img src="RV-01-The%20Bloodline%20Watchers-02.jpg" alt="The Covenant Cover Art" class="store-img" width="160" height="240" loading="lazy" decoding="async">
             </div>
             <h4>The Covenant</h4>
-            <span class="edition" style="color: #ffd680;">Book Two // Coming August 13, 2026</span>
+            <span class="edition" style="color: #ffd680;">Book Two // Pre-Order (Aug 13, 2026)</span>
             <p>The awakening was only the beginning. Ancient bloodlines are rising. Hidden covenants awaken, old alliances are tested.</p>
             <div class="btn-group" style="width: 100%; margin-top: auto;">
-              <a href="https://books2read.com/TheBloodlineWatchers-TheCovenant" target="_blank" rel="noopener" class="mystic-btn btn-gold" style="width: 100%; text-align: center; padding: 12px 10px; font-size: 0.75rem;">Coming August 13, 2026</a>
+              <a href="https://a.co/d/000C4vQN" target="_blank" rel="noopener" class="mystic-btn btn-gold" style="width: 100%; text-align: center; padding: 12px 10px; font-size: 0.75rem;">Amazon</a>
+              <a href="https://books2read.com/TheBloodlineWatchers-TheCovenant" target="_blank" rel="noopener" class="mystic-btn btn-gold" style="width: 100%; text-align: center; padding: 12px 10px; font-size: 0.75rem;">All Retailers</a>
             </div>
           </div>
 
           <!-- BOOK 1 GATEWAY -->
           <div class="store-card">
             <div class="store-img-wrapper">
-              <img src="Ebook.jpg" alt="The Awakening Cover Art" class="store-img">
+              <img src="Ebook.jpg" alt="The Awakening Cover Art" class="store-img" width="160" height="240" loading="lazy" decoding="async">
             </div>
             <h4>The Awakening</h4>
             <span class="edition">Book One // Available Now</span>
@@ -428,7 +448,7 @@
     </footer>
   </div>
 
-  <!-- Background Particle Logic Loop Engines -->
+  <!-- Optimized Background Engine: Throttled Particle Animation for High Mobile Performance -->
   <script>
     const phrases = [
       { eng: "Remember Who You Are", runes: "ᚱᛖᛗᛖᛗᛒᛖᚱ ᚹᚺᛟ ᛁᛟᚢ ᚨᚱᛖ" },
@@ -438,14 +458,14 @@
     ];
 
     const canvas = document.getElementById('void-canvas');
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     let width, height, particles = [];
 
     function resize() {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     }
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', resize, { passive: true });
     resize();
 
     class Particle {
@@ -453,8 +473,8 @@
       reset() {
         this.x = Math.random() * width; this.y = Math.random() * height;
         this.size = Math.random() * 1.8;
-        this.speedX = (Math.random() - 0.5) * 0.25; this.speedY = (Math.random() - 0.5) * 0.25;
-        this.opacity = Math.random() * 0.6; this.life = Math.random() * 120;
+        this.speedX = (Math.random() - 0.5) * 0.2; this.speedY = (Math.random() - 0.5) * 0.2;
+        this.opacity = Math.random() * 0.5; this.life = Math.random() * 120;
         this.color = Math.random() > 0.85 ? '212, 175, 55' : '130, 130, 140';
       }
       update() {
@@ -467,21 +487,29 @@
       }
     }
 
-    for (let i = 0; i < 75; i++) particles.push(new Particle());
+    // Adaptive Particle Count: Lower count on mobile devices to preserve Total Blocking Time (TBT)
+    const particleCount = window.innerWidth < 768 ? 25 : 60;
+    for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+    let isVisible = true;
+    document.addEventListener('visibilitychange', () => { isVisible = !document.hidden; });
+
     function animate() {
-      ctx.clearRect(0, 0, width, height);
-      particles.forEach(p => { p.update(); p.draw(); });
+      if (isVisible) {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => { p.update(); p.draw(); });
+      }
       requestAnimationFrame(animate);
     }
     animate();
 
-    document.addEventListener('mousemove', (e) => {
-      if(window.innerWidth > 900) {
-        const x = (window.innerWidth - e.pageX * 2) / 100;
-        const y = (window.innerHeight - e.pageY * 2) / 100;
-        document.getElementById('scene').style.transform = `translate(${x}px, ${y}px)`;
-      }
-    });
+    if (window.innerWidth > 900) {
+      document.addEventListener('mousemove', (e) => {
+        const x = (window.innerWidth - e.pageX * 2) / 120;
+        const y = (window.innerHeight - e.pageY * 2) / 120;
+        document.getElementById('scene').style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      }, { passive: true });
+    }
 
     let idx = 0;
     const container = document.getElementById('dynamic-container');
@@ -494,13 +522,13 @@
       str.split("").forEach((c, i) => {
         const s = document.createElement('span');
         if (c === " ") { s.className = 'rune space'; s.innerHTML = "&nbsp;"; }
-        else { s.className = 'rune'; s.textContent = c; s.style.animationDelay = `${i*0.08}s`; }
+        else { s.className = 'rune'; s.textContent = c; }
         runeEl.appendChild(s);
       });
     }
 
     function triggerGlitch() {
-      if(titleEl) {
+      if (titleEl) {
         titleEl.classList.add('glitch-active');
         setTimeout(() => titleEl.classList.remove('glitch-active'), 250);
       }
