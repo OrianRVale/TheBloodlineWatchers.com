@@ -5,31 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Bloodline Watchers Series | By Award-Winning Author Orion R. Veil</title>
     
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="description" content="Official publisher hub for The Bloodline Watchers series by Orion R. Veil. Award-winning supernatural thriller series published by Cosmic Quill LLC.">
     <meta name="keywords" content="The Bloodline Watchers, Orion R. Veil, Cosmic Quill, mythic fiction, cosmic horror, The Awakening, The Covenant, The Convergence, supernatural thriller, dark fantasy">
     <meta name="author" content="Orion R. Veil">
     
-    <!-- Hero Canonical Pointer -->
     <link rel="canonical" href="https://www.thebloodlinewatchers.com/" />
     
-    <!-- Open Graph & Twitter Previews -->
     <meta property="og:title" content="The Bloodline Watchers Series | Orion R. Veil">
     <meta property="og:description" content="The awakening was only the beginning. Ancient bloodlines are rising. Experience Books I & II now.">
-    <meta property="og:image" content="https://www.thebloodlinewatchers.com/covenant-banner.jpg">
+    <meta property="og:image" content="https://www.thebloodlinewatchers.com/RV-01-The%20Bloodline%20Watchers-02.jpg">
     <meta property="og:url" content="https://www.thebloodlinewatchers.com/">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Bloodline Watchers Series | Orion R. Veil">
     <meta name="twitter:description" content="The awakening was only the beginning. Ancient bloodlines are rising.">
-    <meta name="twitter:image" content="https://www.thebloodlinewatchers.com/covenant-banner.jpg">
+    <meta name="twitter:image" content="https://www.thebloodlinewatchers.com/RV-01-The%20Bloodline%20Watchers-02.jpg">
 
-    <!-- Font Preconnects for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -146,6 +145,7 @@
             font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
+            padding: 8px 0;
             transition: color 0.3s ease;
         }
 
@@ -157,7 +157,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding-top: 60px;
+            padding-top: 80px;
         }
 
         .cosmic-title {
@@ -242,6 +242,7 @@
             letter-spacing: 1px;
             transition: all 0.3s ease;
             cursor: pointer;
+            min-height: 48px;
         }
 
         .btn-gold {
@@ -266,7 +267,12 @@
             color: var(--pale-gold);
         }
 
-        .section { padding: 80px 0; border-top: 1px solid rgba(212, 175, 55, 0.1); content-visibility: auto; }
+        .section { 
+            padding: 80px 0; 
+            border-top: 1px solid rgba(212, 175, 55, 0.1); 
+            content-visibility: auto; 
+            contain-intrinsic-size: 1px 800px;
+        }
 
         .section h2 {
             font-family: 'Cinzel', serif;
@@ -287,7 +293,8 @@
 
         .award-badge-img {
             height: 120px;
-            width: auto;
+            width: 120px;
+            object-fit: contain;
             filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
             transition: transform 0.3s ease;
         }
@@ -387,6 +394,8 @@
 
         .author-photo {
             width: 100%;
+            max-width: 250px;
+            height: auto;
             aspect-ratio: 1 / 1;
             border-radius: 4px;
             border: 1px solid var(--soft-gold);
@@ -448,6 +457,7 @@
         .newsletter-input {
             flex: 1;
             min-width: 260px;
+            min-height: 48px;
             padding: 14px 18px;
             background: rgba(5, 5, 6, 0.9);
             border: 1px solid rgba(212, 175, 55, 0.3);
@@ -469,7 +479,7 @@
             gap: 8px;
             background: rgba(212, 175, 55, 0.08);
             border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 6px 16px;
+            padding: 8px 16px;
             font-family: 'Cinzel', serif;
             font-size: 0.8rem;
             color: var(--pale-gold);
@@ -522,13 +532,18 @@
             font-size: 0.8rem;
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+            #star-canvas { display: none; }
+        }
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .featured-work { grid-template-columns: 1fr; text-align: center; }
             .btn-group { flex-direction: column; width: 100%; }
             .cta-btn { width: 100%; text-align: center; }
             .author-wrapper { grid-template-columns: 1fr; text-align: center; padding: 2rem 1rem; }
-            .author-photo { max-width: 250px; margin: 0 auto; }
+            .author-photo { max-width: 200px; margin: 0 auto; }
             .newsletter-form { flex-direction: column; width: 100%; }
             .newsletter-input { width: 100%; }
             .review-quote-card { padding: 1.5rem; }
@@ -581,17 +596,15 @@
         </div>
     </section>
 
-    <!-- OFFICIAL HONORS & ACCOLADES STRIP -->
     <section id="accolades" class="section">
         <div class="container" style="text-align: center;">
             <h2>Honors & Critical Acclaim</h2>
             
             <div class="awards-strip">
-                <img src="Distinguished-author-seal.jpg" alt="International Impact Book Awards - Distinguished Author Seal" class="award-badge-img">
-                <img src="badge.png" alt="Booky Awards - Most Immersive Setting Winner" class="award-badge-img">
+                <img src="Distinguished-author-seal.jpg" alt="International Impact Book Awards - Distinguished Author Seal" class="award-badge-img" width="120" height="120" loading="lazy" decoding="async">
+                <img src="badge.png" alt="Booky Awards - Most Immersive Setting Winner" class="award-badge-img" width="120" height="120" loading="lazy" decoding="async">
             </div>
 
-            <!-- READER VIEWS EDITORIAL REVIEW PULL-QUOTE -->
             <div class="review-quote-card">
                 <p>“Memory becomes a form of knowledge, family becomes a source of power, and inherited suffering becomes something that can be confronted rather than merely repeated... In recovering what was hidden from him, Sam has begun reclaiming something even more important: the right to decide for himself who he is.”</p>
                 <div class="review-attribution">— Paul Knobloch, <em>Reader Views (5-Star Editorial Review)</em></div>
@@ -599,7 +612,6 @@
         </div>
     </section>
 
-    <!-- PRIMARY FEATURED RELEASE: BOOK TWO (COVENANT - LIVE NOW) -->
     <section id="featured" class="section">
         <div class="container">
             <h2>Featured Release</h2>
@@ -623,7 +635,6 @@
         </div>
     </section>
 
-    <!-- BOOK ONE: THE AWAKENING -->
     <section id="awakening" class="section">
         <div class="container">
             <h2>Book One</h2>
@@ -648,7 +659,6 @@
         </div>
     </section>
 
-    <!-- AUTHOR SECTION -->
     <section id="author" class="section">
         <div class="container">
             <h2>The Architect</h2>
@@ -664,19 +674,18 @@
         </div>
     </section>
 
-    <!-- ACTIVE WEB3FORMS INTEGRATION (HYPING BOOK THREE: THE CONVERGENCE) -->
     <section id="dispatch" class="section">
         <div class="container">
             <div class="newsletter-card">
                 <h3>The Watcher Dispatch</h3>
                 <p>Enter your transmission address to request clearance for confidential lore drops, early cover reveals, and priority alerts for <strong>Book Three: The Convergence</strong>.</p>
                 
-                <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+                <form class="newsletter-form" id="watcher-dispatch-form" onsubmit="submitWatcherDispatch(event)">
                     <input type="hidden" name="access_key" value="4e33495e-8a2e-4270-bff3-40af101ef5e0">
                     <input type="hidden" name="subject" value="New Subscriber: The Watcher Dispatch">
                     <input type="hidden" name="from_name" value="The Bloodline Watchers Hub">
                     <input type="email" name="email" class="newsletter-input" placeholder="Enter your email address..." required>
-                    <button type="submit" class="cta-btn btn-gold">Request Clearance</button>
+                    <button type="submit" id="dispatch-btn" class="cta-btn btn-gold">Request Clearance</button>
                 </form>
             </div>
         </div>
@@ -746,7 +755,7 @@
             }
         }
 
-        const particleCount = window.innerWidth < 768 ? 25 : 60;
+        const particleCount = window.innerWidth < 768 ? 20 : 50;
         for (let i = 0; i < particleCount; i++) particles.push(new Particle());
         
         let isVisible = true;
@@ -782,6 +791,34 @@
             });
         }
         document.addEventListener('DOMContentLoaded', initRuneChanging);
+
+        async function submitWatcherDispatch(event) {
+            event.preventDefault();
+            const form = event.target;
+            const button = document.getElementById('dispatch-btn');
+            button.textContent = 'Transmitting...';
+            button.disabled = true;
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: new FormData(form)
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('Clearance Level Granted. Your transmission address has been recorded for The Convergence dispatch.');
+                    form.reset();
+                } else {
+                    alert('Transmission error: ' + (data.message || 'Please try again.'));
+                }
+            } catch (err) {
+                alert('Signal lost. Please check your network connection.');
+            } finally {
+                button.textContent = 'Request Clearance';
+                button.disabled = false;
+            }
+        }
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
