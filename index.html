@@ -241,6 +241,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .btn-gold {
@@ -663,15 +664,18 @@
         </div>
     </section>
 
-    <!-- READER MAGNET NEWSLETTER DISPATCH SECTION (HYPING BOOK THREE: THE CONVERGENCE) -->
+    <!-- ACTIVE WEB3FORMS INTEGRATION (HYPING BOOK THREE: THE CONVERGENCE) -->
     <section id="dispatch" class="section">
         <div class="container">
             <div class="newsletter-card">
                 <h3>The Watcher Dispatch</h3>
                 <p>Enter your transmission address to request clearance for confidential lore drops, early cover reveals, and priority alerts for <strong>Book Three: The Convergence</strong>.</p>
                 
-                <form class="newsletter-form" id="watcher-form" onsubmit="handleDispatch(event)">
-                    <input type="email" id="watcher-email" class="newsletter-input" placeholder="Enter your email address..." required>
+                <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="4e33495e-8a2e-4270-bff3-40af101ef5e0">
+                    <input type="hidden" name="subject" value="New Subscriber: The Watcher Dispatch">
+                    <input type="hidden" name="from_name" value="The Bloodline Watchers Hub">
+                    <input type="email" name="email" class="newsletter-input" placeholder="Enter your email address..." required>
                     <button type="submit" class="cta-btn btn-gold">Request Clearance</button>
                 </form>
             </div>
@@ -778,13 +782,6 @@
             });
         }
         document.addEventListener('DOMContentLoaded', initRuneChanging);
-
-        function handleDispatch(e) {
-            e.preventDefault();
-            const emailInput = document.getElementById('watcher-email');
-            alert('Clearance Level Granted. Your transmission address (' + emailInput.value + ') has been recorded for The Convergence dispatch.');
-            emailInput.value = '';
-        }
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
