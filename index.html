@@ -27,7 +27,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Runic&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
     {
@@ -134,7 +134,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.8rem;
+            gap: 1.5rem;
             align-items: center;
         }
 
@@ -142,7 +142,7 @@
             font-family: 'Cinzel', serif;
             color: var(--light-gray);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             padding: 8px 0;
@@ -380,6 +380,260 @@
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
 
+        /* ================= BOOK 3 TEASER STYLING ================= */
+        .convergence-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: radial-gradient(circle at center, rgba(20, 20, 28, 0.7) 0%, rgba(5, 5, 6, 0.95) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.12);
+            position: relative;
+        }
+
+        .transmission-tag {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
+            color: var(--soft-gold);
+            margin-bottom: 12px;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .convergence-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: #fff;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .convergence-desc {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            max-width: 680px;
+            margin: 1.5rem auto 2rem;
+            line-height: 1.7;
+        }
+
+        /* ================= CHARACTER LORE / DOSSIER STYLING ================= */
+        .archive-status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            color: var(--soft-gold);
+            margin-bottom: 12px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--soft-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--pale-gold);
+            animation: pulseDot 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .dossier-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            perspective: 1200px;
+            margin-top: 2rem;
+        }
+
+        .dossier-card {
+            width: 300px;
+            height: 440px;
+            perspective: 1000px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .dossier-card:hover .card-inner,
+        .dossier-card.is-flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 6px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .card-front {
+            background: rgba(10, 10, 14, 0.95);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(212, 175, 55, 0.04);
+            padding: 28px 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .dossier-id {
+            font-family: 'Courier New', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            color: #777;
+        }
+
+        .char-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.45rem;
+            letter-spacing: 0.05em;
+            color: var(--soft-gold);
+            margin: 12px 0 4px 0;
+        }
+
+        .char-designation {
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 16px;
+        }
+
+        .char-summary {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--light-gray);
+            flex-grow: 1;
+        }
+
+        .card-action {
+            font-family: 'Courier New', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            color: var(--pale-gold);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 12px;
+            text-align: center;
+        }
+
+        .mobile-action { display: none; }
+        .desktop-action { display: inline; }
+
+        @media (hover: none) and (pointer: coarse) {
+            .desktop-action { display: none; }
+            .mobile-action { display: inline; }
+        }
+
+        .card-back {
+            background: #000;
+            border: 1px solid var(--soft-gold);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            transform: rotateY(180deg);
+        }
+
+        .dossier-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .dossier-tag {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px 14px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, transparent);
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .tag-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            color: var(--soft-gold);
+        }
+
+        .tag-status {
+            font-family: 'Courier New', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: #888;
+        }
+
+        .tag-status.locked { color: #ff5555; }
+
+        .classified-back {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #101015 0%, #050506 100%);
+            border: 1px dashed rgba(212, 175, 55, 0.35);
+            position: relative;
+        }
+
+        .rune-watermark {
+            position: absolute;
+            font-family: 'Noto Sans Runic', sans-serif;
+            font-size: 3rem;
+            opacity: 0.08;
+            color: var(--soft-gold);
+            pointer-events: none;
+        }
+
+        .classified-content {
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .lock-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            opacity: 0.75;
+        }
+
+        .classified-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.18em;
+            color: var(--soft-gold);
+            margin-bottom: 6px;
+        }
+
+        .classified-sub {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            color: #777;
+            margin: 0;
+        }
+
+        /* ================= AUTHOR & DISPATCH ================= */
         .author-wrapper {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -564,6 +818,8 @@
                     <li><a href="#accolades">Accolades</a></li>
                     <li><a href="#featured">Book II</a></li>
                     <li><a href="#awakening">Book I</a></li>
+                    <li><a href="#convergence">Book III</a></li>
+                    <li><a href="#lore">Character Lore</a></li>
                     <li><a href="#author">The Architect</a></li>
                     <li><a href="#dispatch">The Dispatch</a></li>
                 </ul>
@@ -602,7 +858,6 @@
             <h2>Honors & Critical Acclaim</h2>
             
             <div class="awards-strip">
-                
                 <!-- International Impact Award Seal -->
                 <div style="text-align: center;">
                     <img src="Distinguished-author-seal.jpg" alt="International Impact Book Awards - Distinguished Author Seal" class="award-badge-img" width="120" height="120" loading="lazy" decoding="async">
@@ -615,7 +870,6 @@
                     <em style="font-size:0.92rem; color:#cccccc;">"The Bloodline Watchers" — Orion R. Veil</em>
                     <span style="display:block; font-size:0.75rem; color:#888888; margin-top:10px; letter-spacing:1px; font-family:'Cinzel', serif; text-transform:uppercase;">BOOKYAWARDS · VERIFIED WINNER ↗</span>
                 </a>
-
             </div>
 
             <!-- Reader Views Pull-Quote -->
@@ -626,6 +880,7 @@
         </div>
     </section>
 
+    <!-- BOOK TWO: THE COVENANT -->
     <section id="featured" class="section">
         <div class="container">
             <h2>Featured Release</h2>
@@ -649,6 +904,7 @@
         </div>
     </section>
 
+    <!-- BOOK ONE: THE AWAKENING -->
     <section id="awakening" class="section">
         <div class="container">
             <h2>Book One</h2>
@@ -673,6 +929,130 @@
         </div>
     </section>
 
+    <!-- BOOK THREE: THE CONVERGENCE TEASER -->
+    <section id="convergence" class="section">
+        <div class="container">
+            <div class="convergence-box">
+                <div class="transmission-tag">INCOMING TRANSMISSION // 2027</div>
+                <h3 class="convergence-title">The Bloodline Watchers</h3>
+                <span class="subtitle" style="font-size: 1.4rem;">Book Three: The Convergence</span>
+                <p class="convergence-desc">
+                    The bloodlines collide. The boundaries of memory and ancient reality shatter as the threshold is crossed. Official cover reveal and priority dispatch clearance incoming.
+                </p>
+                <div class="btn-group">
+                    <a href="#dispatch" class="cta-btn btn-gold">Request Transmission Clearance</a>
+                    <a href="#lore" class="cta-btn btn-ghost">Access Character Lore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHARACTER LORE & DOSSIERS (3D FLIP CARDS) -->
+    <section id="lore" class="section">
+        <div class="container" style="text-align: center;">
+            <div class="archive-status-indicator">
+                <span class="status-dot"></span> ARCHIVE DECRYPTION: IN PROGRESS
+            </div>
+            <h2>Character Lore & Dossiers</h2>
+            <p style="font-size: 1.1rem; color: var(--ghost-gray); max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.7;">
+                Classified transmissions recovered from the threshold. Records decrypt and reveal visual renders as the signal strengthens.
+            </p>
+
+            <div class="dossier-grid">
+
+                <!-- CHARACTER 1: SAM HOWARDSON -->
+                <div class="dossier-card" tabindex="0">
+                    <div class="card-inner">
+                        <!-- Front Face: Lore -->
+                        <div class="card-face card-front">
+                            <div class="dossier-id">ARCHIVE // BW-01</div>
+                            <h3 class="char-title">Sam Howardson</h3>
+                            <div class="char-designation">Awakened Lineage // The Carrier</div>
+                            <p class="char-summary">
+                                Haunted by fractured memories and symbols searing beneath his skin, Sam stands at the center of an ancient war older than recorded time. In recovering what was taken, he reclaims the power to decide who he truly is.
+                            </p>
+                            <div class="card-action">
+                                <span class="desktop-action">Hover to reveal portrait ↻</span>
+                                <span class="mobile-action">Tap to reveal portrait ↻</span>
+                            </div>
+                        </div>
+                        <!-- Back Face: Portrait Render -->
+                        <div class="card-face card-back">
+                            <!-- Update filename below if your rendered file has a different name -->
+                            <img src="sam-howardson.jpg" alt="Sam Howardson Portrait" class="dossier-img" onerror="this.onerror=null; this.src='RV-01-The%20Bloodline%20Watchers-02.jpg';">
+                            <div class="dossier-tag">
+                                <span class="tag-name">Sam Howardson</span>
+                                <span class="tag-status">RENDER: DECRYPTED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHARACTER 2: THE WATCHER -->
+                <div class="dossier-card" tabindex="0">
+                    <div class="card-inner">
+                        <!-- Front Face: Lore -->
+                        <div class="card-face card-front">
+                            <div class="dossier-id">ARCHIVE // BW-02</div>
+                            <h3 class="char-title">The Watcher</h3>
+                            <div class="char-designation">Guardian of the Boundary</div>
+                            <p class="char-summary">
+                                A silent observer anchored in the seams between realities. Charged with witnessing the threshold before the final signal burns out, ensuring the ancient covenants are neither forgotten nor broken.
+                            </p>
+                            <div class="card-action">
+                                <span class="desktop-action">Hover to reveal portrait ↻</span>
+                                <span class="mobile-action">Tap to reveal portrait ↻</span>
+                            </div>
+                        </div>
+                        <!-- Back Face: Portrait Render -->
+                        <div class="card-face card-back">
+                            <!-- Update filename below if your rendered file has a different name -->
+                            <img src="the-watcher.jpg" alt="The Watcher Portrait" class="dossier-img" onerror="this.onerror=null; this.src='Ebook.jpg';">
+                            <div class="dossier-tag">
+                                <span class="tag-name">The Watcher</span>
+                                <span class="tag-status">RENDER: DECRYPTED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHARACTER 3: CLASSIFIED PLACEHOLDER -->
+                <div class="dossier-card" tabindex="0">
+                    <div class="card-inner">
+                        <!-- Front Face: Lore -->
+                        <div class="card-face card-front">
+                            <div class="dossier-id">ARCHIVE // BW-03</div>
+                            <h3 class="char-title">The Patriarch</h3>
+                            <div class="char-designation">Ancestral Council // Unverified</div>
+                            <p class="char-summary">
+                                An enigmatic architect behind the Bloodline Covenant. Traces of his lineage remain sealed behind ancestral wards, awaiting the convergence of forgotten blood.
+                            </p>
+                            <div class="card-action">
+                                <span class="desktop-action">Hover to check visual feed ↻</span>
+                                <span class="mobile-action">Tap to check visual feed ↻</span>
+                            </div>
+                        </div>
+                        <!-- Back Face: Redacted Encrypted State -->
+                        <div class="card-face card-back classified-back">
+                            <div class="rune-watermark">ᛞᛟ ᚾᛟᛏ ᛚᛟᛟᚲ</div>
+                            <div class="classified-content">
+                                <div class="lock-icon">🔒</div>
+                                <div class="classified-label">[VISUAL CLASSIFIED]</div>
+                                <p class="classified-sub">Transmission feed incoming 2027.</p>
+                            </div>
+                            <div class="dossier-tag">
+                                <span class="tag-name">Subject #003</span>
+                                <span class="tag-status locked">STATUS: ENCRYPTED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHOR SECTION -->
     <section id="author" class="section">
         <div class="container">
             <h2>The Architect</h2>
@@ -688,6 +1068,7 @@
         </div>
     </section>
 
+    <!-- NEWSLETTER DISPATCH -->
     <section id="dispatch" class="section">
         <div class="container">
             <div class="newsletter-card">
@@ -723,7 +1104,8 @@
                     <p>
                         <a href="#featured">Book II: The Covenant</a><br>
                         <a href="#awakening">Book I: The Awakening</a><br>
-                        <a href="#dispatch">Book III: The Convergence</a>
+                        <a href="#convergence">Book III: The Convergence</a><br>
+                        <a href="#lore">Character Lore</a>
                     </p>
                 </div>
             </div>
@@ -734,6 +1116,7 @@
     </footer>
 
     <script>
+        // Starfield Canvas Background
         const canvas = document.getElementById('star-canvas');
         const ctx = canvas.getContext('2d', { alpha: true });
         let width, height, particles = [];
@@ -784,6 +1167,7 @@
         }
         animateStars();
 
+        // Shifting Runes
         function initRuneChanging() {
             const runes = document.querySelectorAll('.rune');
             const runeOptions = [
@@ -806,6 +1190,19 @@
         }
         document.addEventListener('DOMContentLoaded', initRuneChanging);
 
+        // Mobile / Touch 3D Card Flip Handler
+        document.querySelectorAll('.dossier-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (window.matchMedia('(hover: none)').matches) {
+                    document.querySelectorAll('.dossier-card').forEach(c => {
+                        if (c !== this) c.classList.remove('is-flipped');
+                    });
+                    this.classList.toggle('is-flipped');
+                }
+            });
+        });
+
+        // Web3Forms Form Submission
         async function submitWatcherDispatch(event) {
             event.preventDefault();
             const form = event.target;
@@ -834,6 +1231,7 @@
             }
         }
 
+        // Smooth Anchor Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
