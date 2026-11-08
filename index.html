@@ -29,7 +29,7 @@
     <meta name="twitter:description" content="Ancient bloodlines awaken and hidden covenants emerge. Explore the award-winning supernatural thriller series by Orion R. Veil.">
     <meta name="twitter:image" content="https://www.thebloodlinewatchers.com/RV-01-The%20Bloodline%20Watchers-02.jpg">
 
-    <!-- Fonts Preconnect -->
+    <!-- Fonts Preconnect & Performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,7 +91,7 @@
               "position": 1,
               "bookFormat": "EBook",
               "url": "https://books2read.com/thebloodlinewatchers/",
-              "award": ["Most Immersive Setting - Booky Awards", "Literary Titan Silver Book Award"],
+              "award": ["Most Immersive Setting - Booky Awards", "Literary Titan Silver Book Award", "5-Star Editorial Review - Reader Views"],
               "description": "Book One of The Bloodline Watchers series. A cosmic thriller where forgotten bloodlines awaken and reality unravels."
             },
             {
@@ -122,10 +122,15 @@
         :root {
             --void-black: #050506;
             --deep-black: #0a0a0c;
+            --card-surface: #0e0e13;
             --soft-gold: #d4af37;
             --pale-gold: #f4e4bc;
             --ghost-gray: #888888;
             --light-gray: #cccccc;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -135,6 +140,8 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
 
         #star-canvas {
@@ -160,7 +167,8 @@
             top: 0;
             width: 100%;
             background: rgba(5, 5, 6, 0.95);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(212, 175, 55, 0.15);
             z-index: 1000;
         }
@@ -305,6 +313,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
             min-height: 48px;
+            touch-action: manipulation;
         }
 
         .btn-gold {
@@ -344,13 +353,27 @@
             margin-bottom: 3rem;
         }
 
+        /* Accolades & Awards Strip */
         .awards-strip {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2rem;
             margin: 2.5rem 0;
             flex-wrap: wrap;
+        }
+
+        .award-badge-link {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            touch-action: manipulation;
+        }
+
+        .award-badge-link:hover {
+            transform: translateY(-4px);
         }
 
         .award-badge-img {
@@ -359,12 +382,52 @@
             max-width: 140px;
             object-fit: contain;
             filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
 
+        .award-badge-link:hover .award-badge-img,
         .award-badge-img:hover {
-            transform: scale(1.08);
-            filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.5));
+            transform: scale(1.06);
+            filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.55));
+        }
+
+        .award-badge-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            color: var(--pale-gold);
+            text-transform: uppercase;
+            margin-top: 8px;
+            opacity: 0.85;
+            transition: color 0.3s;
+        }
+
+        .award-badge-link:hover .award-badge-label {
+            color: var(--soft-gold);
+            opacity: 1;
+        }
+
+        .booky-card {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--pale-gold);
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            padding: 18px 24px;
+            background: rgba(10, 10, 12, 0.85);
+            border: 1px solid var(--soft-gold);
+            border-radius: 8px;
+            max-width: 320px;
+            line-height: 1.4;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+            touch-action: manipulation;
+        }
+
+        .booky-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+            border-color: var(--pale-gold);
         }
 
         .review-quote-card {
@@ -375,6 +438,7 @@
             padding: 2.5rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             text-align: left;
+            position: relative;
         }
 
         .review-quote-card p {
@@ -391,6 +455,18 @@
             color: var(--ghost-gray);
             text-transform: uppercase;
             letter-spacing: 2px;
+        }
+
+        .review-attribution a {
+            color: var(--soft-gold);
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(212, 175, 55, 0.5);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .review-attribution a:hover {
+            color: var(--pale-gold);
+            border-color: var(--pale-gold);
         }
 
         .featured-work {
@@ -443,7 +519,7 @@
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
 
-        /* ================= BOOK 3 TEASER STYLING ================= */
+        /* Book 3 Teaser Styling */
         .convergence-box {
             max-width: 900px;
             margin: 0 auto;
@@ -481,7 +557,7 @@
             line-height: 1.7;
         }
 
-        /* ================= CHARACTER LORE / DOSSIER STYLING ================= */
+        /* Character Lore / Dossier 3D Cards */
         .archive-status-indicator {
             display: inline-flex;
             align-items: center;
@@ -523,6 +599,9 @@
             perspective: 1000px;
             cursor: pointer;
             outline: none;
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         .card-inner {
@@ -531,6 +610,7 @@
             height: 100%;
             transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
             transform-style: preserve-3d;
+            will-change: transform;
         }
 
         .dossier-card:hover .card-inner,
@@ -547,6 +627,7 @@
             border-radius: 6px;
             box-sizing: border-box;
             overflow: hidden;
+            transform: translate3d(0, 0, 0);
         }
 
         .card-front {
@@ -637,11 +718,12 @@
             left: 0;
             width: 100%;
             padding: 16px 14px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, transparent);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 25%, transparent);
             box-sizing: border-box;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
+            pointer-events: none;
         }
 
         .tag-name {
@@ -706,7 +788,7 @@
             margin: 0;
         }
 
-        /* ================= AUTHOR & DISPATCH ================= */
+        /* Author & Dispatch */
         .author-wrapper {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -815,6 +897,7 @@
             text-transform: uppercase;
             text-decoration: none;
             transition: all 0.3s ease;
+            touch-action: manipulation;
         }
 
         .social-proof-badge:hover {
@@ -874,6 +957,9 @@
             .newsletter-form { flex-direction: column; width: 100%; }
             .newsletter-input { width: 100%; }
             .review-quote-card { padding: 1.5rem; }
+            .awards-strip { gap: 1.5rem; }
+            .award-badge-img { height: 100px; }
+            .booky-card { max-width: 100%; width: 100%; }
         }
     </style>
 </head>
@@ -904,7 +990,7 @@
         <div class="container">
             <div class="hero-content">
                 <a href="https://www.tiktok.com/@orion144newearth" target="_blank" rel="noopener" class="social-proof-badge">
-                    🏆 Award-Winning Series • 2,600+ Watchers on TikTok
+                    🏆 Multi-Award-Winning Series • 2,600+ Watchers on TikTok
                 </a>
                 <h2 class="hero-series-label">An Award-Winning Supernatural Thriller Series</h2>
                 <h1 class="cosmic-title">THE BLOODLINE WATCHERS</h1>
@@ -925,43 +1011,53 @@
         </div>
     </section>
 
-    <!-- OFFICIAL HONORS & ACCOLADES SECTION -->
+    <!-- OFFICIAL HONORS & CRITICAL ACCLAIM SECTION -->
     <section id="accolades" class="section">
         <div class="container" style="text-align: center;">
             <h2>Honors & Critical Acclaim</h2>
             
             <div class="awards-strip">
-                <!-- International Impact Award Seal -->
-                <div style="text-align: center;">
-                    <img src="Distinguished-author-seal.jpg" alt="International Impact Book Awards - Distinguished Author Seal" class="award-badge-img" width="120" height="120" loading="lazy" decoding="async">
+                <!-- International Impact Book Awards Seal -->
+                <div class="award-badge-link" title="Distinguished Author - International Impact Book Awards">
+                    <img src="Distinguished-author-seal.jpg" alt="International Impact Book Awards - Distinguished Author Seal" class="award-badge-img" width="125" height="125" loading="lazy" decoding="async">
+                    <span class="award-badge-label">Distinguished Author</span>
                 </div>
 
-                <!-- Literary Titan Silver Book Award (Book 1) -->
-                <div style="text-align: center;">
-                    <img src="Literary%20Titan%20Silver%20Book%20Award.png" alt="Literary Titan Silver Book Award - Book One: The Awakening" class="award-badge-img" width="125" height="125" loading="lazy" decoding="async">
+                <!-- Reader Views 5-Star Seal -->
+                <a href="https://readerviews.com/reviews/the-bloodline-watchers-veil/" target="_blank" rel="noopener" class="award-badge-link" title="Reader Views 5-Star Editorial Review & Award Entry">
+                    <img src="5%20Star%202026%20HI%20RES.png" alt="Reader Views 5 Star Award Seal" class="award-badge-img" width="125" height="125" loading="lazy" decoding="async">
+                    <span class="award-badge-label">Reader Views 5-Star</span>
+                </a>
+
+                <!-- Literary Titan Silver Book Award -->
+                <div class="award-badge-link" title="Literary Titan Silver Book Award - Book One: The Awakening">
+                    <img src="Literary%20Titan%20Silver%20Book%20Award.png" alt="Literary Titan Silver Book Award" class="award-badge-img" width="125" height="125" loading="lazy" decoding="async">
+                    <span class="award-badge-label">Literary Titan Silver</span>
                 </div>
 
                 <!-- Book 1: Most Immersive Setting Booky -->
-                <a href="https://www.bookyawards.com/winners/the-bloodline-watchers-orion-r-veil-953" target="_blank" rel="noopener" style="display:inline-block; text-decoration:none; color:#f4e4bc; font-family:'Cormorant Garamond', serif; text-align:center; padding:18px 24px; background:rgba(10, 10, 12, 0.85); border:1px solid #d4af37; border-radius:8px; max-width:340px; line-height:1.4; transition:all 0.3s ease; box-shadow:0 0 15px rgba(212, 175, 55, 0.15);">
-                    <img src="https://www.bookyawards.com/awards/the-bloodline-watchers-orion-r-veil-953/badge.png" alt="BookyAwards Winner - Most Immersive Setting" style="width:120px; height:auto; display:block; margin:0 auto 10px auto; filter:drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));">
-                    <strong style="display:block; color:#d4af37; font-family:'Cinzel', serif; font-size:1.05rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Most Immersive Setting Booky</strong>
-                    <em style="font-size:0.92rem; color:#cccccc;">"The Bloodline Watchers" — Orion R. Veil</em>
+                <a href="https://www.bookyawards.com/winners/the-bloodline-watchers-orion-r-veil-953" target="_blank" rel="noopener" class="booky-card">
+                    <img src="https://www.bookyawards.com/awards/the-bloodline-watchers-orion-r-veil-953/badge.png" alt="BookyAwards Winner - Most Immersive Setting" style="width:110px; height:auto; display:block; margin:0 auto 10px auto; filter:drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));" loading="lazy" decoding="async">
+                    <strong style="display:block; color:#d4af37; font-family:'Cinzel', serif; font-size:1.02rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Most Immersive Setting</strong>
+                    <em style="font-size:0.9rem; color:#cccccc;">"The Bloodline Watchers" — Orion R. Veil</em>
                     <span style="display:block; font-size:0.75rem; color:#888888; margin-top:10px; letter-spacing:1px; font-family:'Cinzel', serif; text-transform:uppercase;">BOOKYAWARDS · VERIFIED WINNER ↗</span>
                 </a>
 
                 <!-- Book 2: Boldest Concept Booky -->
-                <a href="https://www.bookyawards.com/winners/the-bloodline-watchers-the-covenant-book-2-of-the-bloodline-1240" target="_blank" rel="noopener" style="display:inline-block; text-decoration:none; color:#f4e4bc; font-family:'Cormorant Garamond', serif; text-align:center; padding:18px 24px; background:rgba(10, 10, 12, 0.85); border:1px solid #d4af37; border-radius:8px; max-width:340px; line-height:1.4; transition:all 0.3s ease; box-shadow:0 0 15px rgba(212, 175, 55, 0.15);">
-                    <img src="https://www.bookyawards.com/awards/the-bloodline-watchers-the-covenant-book-2-of-the-bloodline-1240/badge.png" alt="BookyAwards Winner - Boldest Concept" style="width:120px; height:auto; display:block; margin:0 auto 10px auto; filter:drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));">
-                    <strong style="display:block; color:#d4af37; font-family:'Cinzel', serif; font-size:1.05rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Boldest Concept Booky</strong>
-                    <em style="font-size:0.92rem; color:#cccccc;">"Book Two: The Covenant" — Orion R. Veil</em>
+                <a href="https://www.bookyawards.com/winners/the-bloodline-watchers-the-covenant-book-2-of-the-bloodline-1240" target="_blank" rel="noopener" class="booky-card">
+                    <img src="https://www.bookyawards.com/awards/the-bloodline-watchers-the-covenant-book-2-of-the-bloodline-1240/badge.png" alt="BookyAwards Winner - Boldest Concept" style="width:110px; height:auto; display:block; margin:0 auto 10px auto; filter:drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));" loading="lazy" decoding="async">
+                    <strong style="display:block; color:#d4af37; font-family:'Cinzel', serif; font-size:1.02rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Boldest Concept</strong>
+                    <em style="font-size:0.9rem; color:#cccccc;">"Book Two: The Covenant" — Orion R. Veil</em>
                     <span style="display:block; font-size:0.75rem; color:#888888; margin-top:10px; letter-spacing:1px; font-family:'Cinzel', serif; text-transform:uppercase;">BOOKYAWARDS · VERIFIED WINNER ↗</span>
                 </a>
             </div>
 
-            <!-- Reader Views Pull-Quote -->
+            <!-- Reader Views Pull-Quote Card Linked to Live Review -->
             <div class="review-quote-card">
                 <p>“Memory becomes a form of knowledge, family becomes a source of power, and inherited suffering becomes something that can be confronted rather than merely repeated... In recovering what was hidden from him, Sam has begun reclaiming something even more important: the right to decide for himself who he is.”</p>
-                <div class="review-attribution">— Paul Knobloch, <em>Reader Views (5-Star Editorial Review)</em></div>
+                <div class="review-attribution">
+                    — Paul Knobloch, <a href="https://readerviews.com/reviews/the-bloodline-watchers-veil/" target="_blank" rel="noopener"><em>Reader Views (5-Star Editorial Review & Entry) ↗</em></a>
+                </div>
             </div>
         </div>
     </section>
@@ -979,7 +1075,7 @@
                 <div class="work-details">
                     <h3>The Bloodline Watchers</h3>
                     <span class="subtitle">Book One: The Awakening</span>
-                    <p><strong>Winner: Most Immersive Setting (Booky Awards) • Literary Titan Silver Book Award</strong></p>
+                    <p><strong>Winner: Most Immersive Setting (Booky Awards) • Literary Titan Silver Book Award • Reader Views 5-Star Seal</strong></p>
                     <p>A cosmic thriller rooted in ancient truth. When forgotten bloodlines awaken and the watchers emerge from shadow, reality itself begins to unravel.</p>
                     <p>Explore inherited responsibility and the courage required to break the cycle. Available now across major retailers.</p>
                     <div class="btn-group" style="justify-content: flex-start; margin-top: 1.5rem;">
@@ -1064,7 +1160,7 @@
                             </div>
                         </div>
                         <div class="card-face card-back">
-                            <img src="sam%20web%20card.png" alt="Sam Howardson Portrait" class="dossier-img">
+                            <img src="sam%20web%20card.png" alt="Sam Howardson Portrait" class="dossier-img" loading="lazy" decoding="async">
                             <div class="dossier-tag">
                                 <span class="tag-name">Sam Howardson</span>
                                 <span class="tag-status">RENDER: DECRYPTED</span>
@@ -1090,7 +1186,7 @@
                             </div>
                         </div>
                         <div class="card-face card-back">
-                            <img src="Krishtan%20web%20card.png" alt="Krishtan Dauvee Portrait" class="dossier-img">
+                            <img src="Krishtan%20web%20card.png" alt="Krishtan Dauvee Portrait" class="dossier-img" loading="lazy" decoding="async">
                             <div class="dossier-tag">
                                 <span class="tag-name">Krishtan Dauvee</span>
                                 <span class="tag-status">RENDER: DECRYPTED</span>
@@ -1116,7 +1212,7 @@
                             </div>
                         </div>
                         <div class="card-face card-back">
-                            <img src="celine%20web%20card.png" alt="Celine Grimhold Portrait" class="dossier-img">
+                            <img src="celine%20web%20card.png" alt="Celine Grimhold Portrait" class="dossier-img" loading="lazy" decoding="async">
                             <div class="dossier-tag">
                                 <span class="tag-name">Celine Grimhold</span>
                                 <span class="tag-status">RENDER: DECRYPTED</span>
@@ -1142,7 +1238,7 @@
                             </div>
                         </div>
                         <div class="card-face card-back">
-                            <img src="luke%20card.png" alt="Luke Grimhold Portrait" class="dossier-img">
+                            <img src="luke%20card.png" alt="Luke Grimhold Portrait" class="dossier-img" loading="lazy" decoding="async">
                             <div class="dossier-tag">
                                 <span class="tag-name">Luke Grimhold</span>
                                 <span class="tag-status">RENDER: DECRYPTED</span>
@@ -1230,7 +1326,7 @@
                             </div>
                         </div>
                         <div class="card-face card-back">
-                            <img src="marisol.png" alt="Marisol Dauvee Portrait" class="dossier-img">
+                            <img src="marisol.png" alt="Marisol Dauvee Portrait" class="dossier-img" loading="lazy" decoding="async">
                             <div class="dossier-tag">
                                 <span class="tag-name">Marisol Dauvee</span>
                                 <span class="tag-status">RENDER: DECRYPTED</span>
@@ -1256,7 +1352,7 @@
                             </div>
                         </div>
                         <div class="card-face card-back">
-                            <img src="Kay%20webcard.png" alt="Kay Grimhold Portrait" class="dossier-img">
+                            <img src="Kay%20webcard.png" alt="Kay Grimhold Portrait" class="dossier-img" loading="lazy" decoding="async">
                             <div class="dossier-tag">
                                 <span class="tag-name">Kay Grimhold</span>
                                 <span class="tag-status">RENDER: DECRYPTED</span>
@@ -1358,7 +1454,7 @@
                     <input type="hidden" name="access_key" value="4e33495e-8a2e-4270-bff3-40af101ef5e0">
                     <input type="hidden" name="subject" value="New Subscriber: The Watcher Dispatch">
                     <input type="hidden" name="from_name" value="The Bloodline Watchers Hub">
-                    <input type="email" name="email" class="newsletter-input" placeholder="Enter your email address..." required>
+                    <input type="email" name="email" class="newsletter-input" placeholder="Enter your email address..." required autocomplete="email">
                     <button type="submit" id="dispatch-btn" class="cta-btn btn-gold">Request Clearance</button>
                 </form>
             </div>
@@ -1395,10 +1491,11 @@
     </footer>
 
     <script>
-        // Starfield Canvas Background
+        // High-Performance Starfield Canvas Background
         const canvas = document.getElementById('star-canvas');
         const ctx = canvas.getContext('2d', { alpha: true });
         let width, height, particles = [];
+        let animationFrameId;
 
         function resize() {
             width = canvas.width = window.innerWidth;
@@ -1435,14 +1532,20 @@
         for (let i = 0; i < particleCount; i++) particles.push(new Particle());
         
         let isVisible = true;
-        document.addEventListener('visibilitychange', () => { isVisible = !document.hidden; });
+        document.addEventListener('visibilitychange', () => { 
+            isVisible = !document.hidden; 
+            if (isVisible) {
+                cancelAnimationFrame(animationFrameId);
+                animateStars();
+            }
+        });
 
         function animateStars() {
             if (isVisible) {
                 ctx.clearRect(0, 0, width, height);
                 particles.forEach(p => { p.update(); p.draw(); });
+                animationFrameId = requestAnimationFrame(animateStars);
             }
-            requestAnimationFrame(animateStars);
         }
         animateStars();
 
