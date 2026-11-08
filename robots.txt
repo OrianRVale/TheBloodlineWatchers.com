@@ -1,5 +1,71 @@
-# robots.txt for orianrvale.github.io
+# ==========================================
+# Robots.txt for The Bloodline Watchers Hub
+# https://www.thebloodlinewatchers.com/
+# ==========================================
+
+# 1. Standard Web & Search Engine Crawlers
 User-agent: *
 Allow: /
+Disallow:
 
-Sitemap: https://orianrvale.github.io/sitemap.xml
+# 2. OpenAI (ChatGPT, SearchGPT, Real-time Retrieval)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# 3. Anthropic (Claude Search & Answers)
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# 4. Perplexity AI (Direct Answer Engine & Citations)
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# 5. Google AI & Deep Research (Gemini / AI Overviews)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# 6. Apple Intelligence & Spotlight
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# 7. Meta AI & Social Discovery
+User-agent: Meta-WebIndexer
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# 8. ByteDance (TikTok Discovery & In-App Search)
+User-agent: Bytespider
+Allow: /
+
+# 9. Open LLM Corpora & Independent Agents
+User-agent: CCBot
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+# Canonical Sitemap
+Sitemap: https://www.thebloodlinewatchers.com/sitemap.xml
