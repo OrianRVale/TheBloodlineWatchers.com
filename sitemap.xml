@@ -1,9 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Primary Hub URL & Visual Knowledge Assets -->
   <url>
-    <loc>https://thebloodlinewatchers.com/</loc>
-    <lastmod>2025-08-10</lastmod>
+    <loc>https://www.thebloodlinewatchers.com/</loc>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+
+    <!-- Book Covers -->
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/Ebook.jpg</image:loc>
+      <image:title>The Bloodline Watchers: The Awakening (Book One) Cover Art</image:title>
+      <image:caption>Cover artwork for Book One: The Awakening by Orion R. Veil</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/RV-01-The%20Bloodline%20Watchers-02.jpg</image:loc>
+      <image:title>The Bloodline Watchers: The Covenant (Book Two) Cover Art</image:title>
+      <image:caption>Cover artwork for Book Two: The Covenant by Orion R. Veil</image:caption>
+    </image:image>
+
+    <!-- Author Portrait -->
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/OrionRVeil.jpg</image:loc>
+      <image:title>Orion R. Veil - Award-Winning Author</image:title>
+      <image:caption>Official portrait of supernatural thriller and cosmic horror author Orion R. Veil</image:caption>
+    </image:image>
+
+    <!-- Decrypted Character Lore Portraits -->
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/sam%20web%20card.png</image:loc>
+      <image:title>Sam Howardson Character Dossier - The Unexpected Center</image:title>
+      <image:caption>Sam Howardson visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/Krishtan%20web%20card.png</image:loc>
+      <image:title>Krishtan Dauvee Character Dossier - The Keeper of Old Ways</image:title>
+      <image:caption>Krishtan Dauvee visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/celine%20web%20card.png</image:loc>
+      <image:title>Celine Grimhold Character Dossier - The Questioning Spirit</image:title>
+      <image:caption>Celine Grimhold visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/luke%20card.png</image:loc>
+      <image:title>Luke Grimhold Character Dossier - The Steadfast Protector</image:title>
+      <image:caption>Luke Grimhold visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/marisol.png</image:loc>
+      <image:title>Marisol Dauvee Character Dossier - The Dauvee Seeker</image:title>
+      <image:caption>Marisol Dauvee visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/Kay%20webcard.png</image:loc>
+      <image:title>Kay Grimhold Character Dossier - The Quiet Witness</image:title>
+      <image:caption>Kay Grimhold visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <!-- Verified Accolades & Badges -->
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/The-BookFest-Second-Place-Book-Award.png</image:loc>
+      <image:title>The BookFest Fall 2026 Second Place in Fantasy Award</image:title>
+      <image:caption>The BookFest Fall 2026 award badge honoring The Bloodline Watchers: The Awakening</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/Literary%20Titan%20Silver%20Book%20Award.png</image:loc>
+      <image:title>Literary Titan Silver Book Award</image:title>
+      <image:caption>Literary Titan Silver Book Award seal for Book One: The Awakening</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/5%20Star%202026%20HI%20RES.png</image:loc>
+      <image:title>Reader Views 5-Star Editorial Review Award Seal</image:title>
+      <image:caption>Reader Views 5-star official review seal for The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/Distinguished-author-seal.jpg</image:loc>
+      <image:title>International Impact Book Awards Distinguished Author Seal</image:title>
+      <image:caption>Distinguished Author award seal honoring Orion R. Veil</image:caption>
+    </image:image>
   </url>
+
+  <!-- LLM Plain-Text Manifest Discovery URL -->
+  <url>
+    <loc>https://www.thebloodlinewatchers.com/llms.txt</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
