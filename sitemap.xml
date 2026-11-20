@@ -5,7 +5,7 @@
   <!-- Primary Hub URL & Visual Knowledge Assets -->
   <url>
     <loc>https://www.thebloodlinewatchers.com/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
 
@@ -29,7 +29,7 @@
       <image:caption>Official portrait of supernatural thriller and cosmic horror author Orion R. Veil</image:caption>
     </image:image>
 
-    <!-- Decrypted Character Lore Portraits -->
+    <!-- Decrypted Character Lore Portraits (11 Active) -->
     <image:image>
       <image:loc>https://www.thebloodlinewatchers.com/sam%20web%20card.png</image:loc>
       <image:title>Sam Howardson Character Dossier - The Unexpected Center</image:title>
@@ -66,6 +66,36 @@
       <image:caption>Kay Grimhold visual archive portrait from The Bloodline Watchers</image:caption>
     </image:image>
 
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/brownlow.png</image:loc>
+      <image:title>James Brownlow Character Dossier - The Voice of Sovereign Hope</image:title>
+      <image:caption>James Brownlow visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/Hyland.png</image:loc>
+      <image:title>Gayland Hyland Character Dossier - The Man Behind the Glass</image:title>
+      <image:caption>Gayland Hyland visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/ezekiel.png</image:loc>
+      <image:title>Ezekiel Smith Character Dossier - The Covenant Steward</image:title>
+      <image:caption>Ezekiel Smith visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/Leontine.png</image:loc>
+      <image:title>Leontine Dauvee Character Dossier - Marisol’s Mother</image:title>
+      <image:caption>Leontine Dauvee visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.thebloodlinewatchers.com/Cavendish.png</image:loc>
+      <image:title>Dr. Niles Cavendish Character Dossier - The Field Harmonics Lead</image:title>
+      <image:caption>Dr. Niles Cavendish visual archive portrait from The Bloodline Watchers</image:caption>
+    </image:image>
+
     <!-- Verified Accolades & Badges -->
     <image:image>
       <image:loc>https://www.thebloodlinewatchers.com/The-BookFest-Second-Place-Book-Award.png</image:loc>
@@ -95,8 +125,8 @@
   <!-- LLM Plain-Text Manifest Discovery URL -->
   <url>
     <loc>https://www.thebloodlinewatchers.com/llms.txt</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
